@@ -1,29 +1,35 @@
 /*! src/index.css */
 
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-	color-scheme: light dark;
+@theme {
+	--color-brand: #ff7f27;
+
+	--font-sans:
+		'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial,
+		sans-serif;
+	--font-display: 'Poppins', var(--font-sans);
 }
 
-* {
-	box-sizing: border-box;
+@custom-variant theme-dark (&:where([data-theme="dark"] *));
+@custom-variant theme-light (&:where([data-theme="light"] *));
+@custom-variant theme-system (&:where([data-theme="system"] *));
+
+@layer components {
+	.icon-btn {
+		@apply inline-flex items-center justify-center rounded-md px-3 py-2 text-sm border
+           border-gray-200 dark:border-gray-800
+           hover:bg-gray-50 dark:hover:bg-zinc-900;
+	}
+
+	.icon-btn[data-active='true'] {
+		@apply border-brand text-brand;
+	}
 }
 
 html,
 body,
 #root {
 	height: 100%;
-}
-
-body {
-	margin: 0;
-	font-family:
-		system-ui,
-		-apple-system,
-		Segoe UI,
-		Roboto,
-		Arial,
-		sans-serif;
-	line-height: 1.5;
 }
