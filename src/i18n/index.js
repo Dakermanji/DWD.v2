@@ -4,28 +4,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+import enCommon from './locales/en/common.json';
+import frCommon from './locales/fr/common.json';
+import arCommon from './locales/ar/common.json';
+
 const resources = {
-	en: {
-		translation: {
-			app: { title: 'Dakermanji v2' },
-			home: { title: 'Home', subtitle: 'Portfolio hub scaffold.' },
-			lang: { label: 'Language' },
-		},
-	},
-	fr: {
-		translation: {
-			app: { title: 'Dakermanji v2' },
-			home: { title: 'Accueil', subtitle: 'Structure de portfolio.' },
-			lang: { label: 'Langue' },
-		},
-	},
-	ar: {
-		translation: {
-			app: { title: 'دكرمنجي v2' },
-			home: { title: 'الرئيسية', subtitle: 'هيكل موقع بورتفوليو.' },
-			lang: { label: 'اللغة' },
-		},
-	},
+	en: { translation: enCommon },
+	fr: { translation: frCommon },
+	ar: { translation: arCommon },
 };
 
 i18n.use(

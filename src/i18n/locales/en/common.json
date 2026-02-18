@@ -1,0 +1,11 @@
+{
+	"app": { "title": "Dakermanji" },
+	"home": { "title": "Home", "subtitle": "Portfolio hub scaffold." },
+	"lang": { "label": "Language" },
+	"nav": {
+		"about": "About",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"contact": "Contact"
+	}
+}

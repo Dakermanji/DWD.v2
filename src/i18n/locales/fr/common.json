@@ -1,0 +1,11 @@
+{
+	"app": { "title": "Dakermanji" },
+	"home": { "title": "Accueil", "subtitle": "Structure de portfolio." },
+	"lang": { "label": "Langue" },
+	"nav": {
+		"about": "À propos",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"contact": "Contact"
+	}
+}
