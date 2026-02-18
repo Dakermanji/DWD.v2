@@ -6,9 +6,12 @@
 		"about": "À propos",
 		"services": "Services",
 		"portfolio": "Portfolio",
-		"contact": "Contact"
+		"contact": "Contact",
+		"dashboard": "Tableau de bord",
+		"social": "Réseau"
 	},
 	"auth": {
-		"login_signup": "Connexion / Inscription"
+		"login_signup": "Connexion / Inscription",
+		"logout": "Déconnexion"
 	}
 }

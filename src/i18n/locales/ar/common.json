@@ -6,9 +6,12 @@
 		"about": "نبذة",
 		"services": "الخدمات",
 		"portfolio": "الأعمال",
-		"contact": "تواصل"
+		"contact": "تواصل",
+		"dashboard": "لوحة التحكم",
+		"social": "التواصل"
 	},
 	"auth": {
-		"login_signup": "دخول / تسجيل"
+		"login_signup": "دخول / تسجيل",
+		"logout": "تسجيل الخروج"
 	}
 }
