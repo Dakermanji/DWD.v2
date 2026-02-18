@@ -2,11 +2,7 @@
 
 import { useState } from 'react';
 import NavBrand from './NavBrand.jsx';
-import NavLinks from './NavLinks.jsx';
-import NavUser from './NavUser.jsx';
-import NavNotUser from './NavNotUser.jsx';
-import NavMode from './NavMode.jsx';
-import NavLang from './NavLang.jsx';
+import NavContent from './NavContent.jsx';
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
@@ -29,20 +25,15 @@ export default function Navbar() {
 					</button>
 
 					{/* Desktop */}
-					<div className='hidden md:flex items-center gap-6'>
-						<NavLinks />
-						{user ? <NavUser /> : <NavNotUser />}
-						<NavLang />
+					<div className='hidden md:block'>
+						<NavContent user={user} />
 					</div>
 				</div>
 
 				{/* Mobile Menu */}
 				{open && (
-					<div className='md:hidden flex flex-col gap-4 py-4'>
-						<NavLinks />
-						{user ? <NavUser /> : <NavNotUser />}
-						<NavMode />
-						<NavLang />
+					<div className='md:hidden py-4'>
+						<NavContent user={user} vertical />
 					</div>
 				)}
 			</div>
