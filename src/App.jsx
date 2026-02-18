@@ -1,10 +1,18 @@
 //! src/App.jsx
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import MainLayout from './layout/Layout.jsx';
+import HomePage from './pages/Home/HomePage.jsx';
+
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <MainLayout />,
+		children: [{ index: true, element: <HomePage /> }],
+	},
+]);
+
 export default function App() {
-	return (
-		<main style={{ padding: 24, fontFamily: 'system-ui, sans-serif' }}>
-			<h1>Dakermanji v2</h1>
-			<p>Portfolio hub (React + Node + PostgreSQL)</p>
-		</main>
-	);
+	return <RouterProvider router={router} />;
 }
