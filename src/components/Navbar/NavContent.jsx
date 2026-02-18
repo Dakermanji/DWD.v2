@@ -11,7 +11,7 @@ export default function NavContent({ user, vertical = false }) {
 		<div
 			className={`flex ${vertical ? 'flex-col gap-4' : 'items-center gap-6'}`}
 		>
-			<NavLinks />
+			<NavLinks vertical={vertical} />
 			{user ? <NavUser /> : <NavNotUser />}
 			<NavLang />
 			<NavMode />
