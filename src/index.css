@@ -1,5 +1,7 @@
 /*! src/index.css */
 
+@import 'tailwindcss';
+
 :root {
 	color-scheme: light dark;
 }
@@ -9,7 +11,8 @@
 }
 
 html,
-body {
+body,
+#root {
 	height: 100%;
 }
 
