@@ -1,7 +1,14 @@
 {
 	"app": { "title": "Dakermanji" },
 	"home": { "title": "Home", "subtitle": "Portfolio hub scaffold." },
-	"lang": { "label": "Language" },
+	"lang": {
+		"label": "Language",
+		"flag": {
+			"canada": "Canadian flag",
+			"quebec": "Quebec flag",
+			"syria": "Syrian flag"
+		}
+	},
 	"nav": {
 		"about": "About",
 		"services": "Services",

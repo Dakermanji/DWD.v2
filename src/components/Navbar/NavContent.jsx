@@ -1,4 +1,4 @@
-//! src/components/Navbar/NavLang.jsx
+//! src/components/Navbar/NavContent.jsx
 
 import NavLinks from './NavLinks.jsx';
 import NavUser from './NavUser.jsx';
@@ -18,7 +18,7 @@ export default function NavContent({ user, vertical = false }) {
 				<NavNotUser vertical={vertical} />
 			)}
 
-			<NavLang />
+			<NavLang vertical={vertical} />
 			<NavMode />
 		</div>
 	);

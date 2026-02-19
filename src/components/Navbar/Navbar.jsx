@@ -7,7 +7,7 @@ import NavContent from './NavContent.jsx';
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
 
-	const user = true; // placeholder until auth is added
+	const user = false; // placeholder until auth is added
 
 	return (
 		<nav className='border-b border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>

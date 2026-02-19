@@ -3,6 +3,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { supportedLanguageCodes } from '../config/languages.js';
 
 import enCommon from './locales/en/common.json';
 import frCommon from './locales/fr/common.json';
@@ -26,7 +27,7 @@ i18n.use(
 	.init({
 		resources,
 		fallbackLng: 'en',
-		supportedLngs: ['en', 'fr', 'ar'],
+		supportedLngs: supportedLanguageCodes,
 		nonExplicitSupportedLngs: true, // maps fr-CA -> fr, en-US -> en
 		interpolation: { escapeValue: false },
 		react: { useSuspense: false },

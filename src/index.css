@@ -33,3 +33,7 @@ body,
 #root {
 	height: 100%;
 }
+
+button {
+	@apply cursor-pointer;
+}
