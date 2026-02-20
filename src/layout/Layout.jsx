@@ -5,14 +5,10 @@ import Navbar from '../components/Navbar/Navbar.jsx';
 
 export default function Layout() {
 	return (
-		<div className='min-h-screen bg-white text-gray-900 dark:bg-zinc-950 dark:text-zinc-100'>
-			<header className='flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-zinc-800'>
-				<div className='flex items-center gap-3'>
-					<Navbar />
-				</div>
-			</header>
+		<div className='w-full min-h-screen bg-[rgb(var(--c-surface))] text-[rgb(var(--c-text))]'>
+			<Navbar />
 
-			<main className='px-6 py-8'>
+			<main className='mx-auto w-full px-4 py-6'>
 				<Outlet />
 			</main>
 		</div>
