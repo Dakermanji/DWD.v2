@@ -99,4 +99,16 @@
 		@apply text-[rgb(var(--c-text))];
 		@apply hover:opacity-80;
 	}
+
+	.ui-navcontent {
+		@apply flex;
+	}
+
+	.ui-navcontent--row {
+		@apply items-center gap-6;
+	}
+
+	.ui-navcontent--col {
+		@apply flex-col gap-4;
+	}
 }

@@ -7,10 +7,10 @@ import NavMode from './NavMode.jsx';
 import NavLang from './NavLang.jsx';
 
 export default function NavContent({ user, vertical = false }) {
+	const layoutClass = vertical ? 'ui-navcontent--col' : 'ui-navcontent--row';
+
 	return (
-		<div
-			className={`flex ${vertical ? 'flex-col gap-4' : 'items-center gap-6'}`}
-		>
+		<div className={`ui-navcontent ${layoutClass}`}>
 			<NavLinks vertical={vertical} />
 			{user ? (
 				<NavUser vertical={vertical} />
