@@ -15,7 +15,8 @@
 		"portfolio": "Portfolio",
 		"contact": "Contact",
 		"dashboard": "Dashboard",
-		"social": "Social"
+		"social": "Social",
+		"toggle": "Toggle navigation"
 	},
 	"auth": {
 		"login_signup": "Sign in / Sign up",

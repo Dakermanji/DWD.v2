@@ -63,3 +63,40 @@
 		@apply cursor-pointer;
 	}
 }
+
+@layer components {
+	.ui-navbar {
+		@apply border-b;
+		@apply border-[rgb(var(--c-border))];
+		@apply bg-[rgb(var(--c-surface))];
+	}
+
+	.ui-navbar-inner {
+		@apply mx-auto px-6;
+	}
+
+	.ui-navbar-row {
+		@apply flex items-center justify-between h-16;
+	}
+
+	.ui-navbar-mobile {
+		@apply py-4;
+	}
+
+	.icon-btn {
+		@apply inline-flex items-center justify-center rounded-md px-3 py-2 text-sm border transition;
+		@apply border-[rgb(var(--c-border))] text-[rgb(var(--c-text))];
+		@apply hover:bg-[rgb(var(--c-hover))];
+		@apply bg-transparent;
+	}
+
+	.icon-btn[data-active='true'] {
+		@apply border-brand text-brand;
+	}
+
+	.ui-brand {
+		@apply font-display font-semibold text-lg tracking-tight transition-opacity;
+		@apply text-[rgb(var(--c-text))];
+		@apply hover:opacity-80;
+	}
+}

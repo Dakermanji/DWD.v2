@@ -15,7 +15,8 @@
 		"portfolio": "Portfolio",
 		"contact": "Contact",
 		"dashboard": "Tableau de bord",
-		"social": "Réseau"
+		"social": "Réseau",
+		"toggle": "Basculer la navigation"
 	},
 	"auth": {
 		"login_signup": "Connexion / Inscription",

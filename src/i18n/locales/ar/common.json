@@ -15,7 +15,8 @@
 		"portfolio": "الأعمال",
 		"contact": "تواصل",
 		"dashboard": "لوحة التحكم",
-		"social": "التواصل"
+		"social": "التواصل",
+		"toggle": "تبديل التنقل"
 	},
 	"auth": {
 		"login_signup": "دخول / تسجيل",

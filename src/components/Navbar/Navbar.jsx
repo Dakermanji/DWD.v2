@@ -1,6 +1,7 @@
 //! src/components/Navbar/Navbar.jsx
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import NavBrand from './NavBrand.jsx';
 import NavContent from './NavContent.jsx';
 
@@ -8,18 +9,19 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 
 	const user = false; // placeholder until auth is added
+	const { t } = useTranslation();
 
 	return (
-		<nav className='border-b border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>
-			<div className='max-w-6xl mx-auto px-6'>
-				<div className='flex items-center justify-between h-16'>
+		<nav className='ui-navbar'>
+			<div className='ui-navbar-inner'>
+				<div className='ui-navbar-row'>
 					<NavBrand />
 
 					{/* Mobile Toggle */}
 					<button
 						className='md:hidden icon-btn'
 						onClick={() => setOpen(!open)}
-						aria-label='Toggle navigation'
+						aria-label={t('nav.toggle')}
 					>
 						☰
 					</button>
@@ -32,7 +34,7 @@ export default function Navbar() {
 
 				{/* Mobile Menu */}
 				{open && (
-					<div className='md:hidden py-4'>
+					<div className='md:hidden ui-navbar-mobile'>
 						<NavContent user={user} vertical />
 					</div>
 				)}
