@@ -122,4 +122,11 @@
 	.ui-navlink--center {
 		@apply justify-center;
 	}
+
+	.ui-navaction {
+		@apply flex items-center gap-2 rounded-md px-2 py-1 text-sm transition-colors;
+		@apply text-[rgb(var(--c-text))] hover:bg-[rgb(var(--c-hover))];
+		@apply hover:bg-[rgb(var(--c-hover))];
+		@apply hover:text-brand;
+	}
 }
