@@ -13,7 +13,7 @@ export default function NavContent({ user, vertical = false }) {
 			<NavLinks vertical={vertical} />
 			<NavAuth user={user} vertical={vertical} />
 			<NavLang vertical={vertical} />
-			<NavMode />
+			<NavMode vertical={vertical} />
 		</div>
 	);
 }

@@ -21,5 +21,11 @@
 	"auth": {
 		"login_signup": "Connexion / Inscription",
 		"logout": "Déconnexion"
+	},
+	"theme": {
+		"label": "Thème",
+		"light": "Clair",
+		"dark": "Sombre",
+		"system": "Système"
 	}
 }

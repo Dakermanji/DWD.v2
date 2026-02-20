@@ -21,5 +21,11 @@
 	"auth": {
 		"login_signup": "Sign in / Sign up",
 		"logout": "Logout"
+	},
+	"theme": {
+		"label": "Theme",
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System"
 	}
 }

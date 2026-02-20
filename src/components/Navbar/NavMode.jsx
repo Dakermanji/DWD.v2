@@ -2,6 +2,6 @@
 
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 
-export default function NavMode() {
-	return <ThemeSwitcher />;
+export default function NavMode({ vertical = false }) {
+	return <ThemeSwitcher vertical={vertical} />;
 }
