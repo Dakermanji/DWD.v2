@@ -1,36 +1,72 @@
 //! src/components/Navbar/NavLinks.jsx
 
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { navBar } from '../../config/navigation.js';
+
+function isHashLink(link) {
+	return typeof link === 'string' && link.startsWith('#');
+}
+
+function isExternalLink(link) {
+	return typeof link === 'string' && /^https?:\/\//i.test(link);
+}
 
 export default function NavLinks({ vertical = false }) {
 	const location = useLocation();
 	const { t } = useTranslation();
 
 	const links = location.pathname === '/' ? navBar.index : [];
-
 	if (!links.length) return null;
+
+	const cls = `ui-navlink ${!vertical ? 'ui-navlink--center' : ''}`;
 
 	return (
 		<>
-			{links.map(({ link, label, icon: Icon }) => (
-				<a
-					key={link}
-					href={link}
-					title={!vertical ? t(label) : undefined} // Tooltip on desktop
-					className={`
-							flex items-center gap-2
-							px-2 py-1 rounded-md
-							text-sm hover:text-brand hover:bg-gray-100 dark:hover:bg-zinc-900
-							transition-colors
-							${!vertical ? 'justify-center' : ''}
-							`}
-				>
-					<Icon size={18} />
-					{vertical && <span>{t(label)}</span>}
-				</a>
-			))}
+			{links.map(({ link, label, icon: Icon }) => {
+				const commonProps = {
+					title: !vertical ? t(label) : undefined,
+					className: cls,
+				};
+
+				// #section (in-page)
+				if (isHashLink(link)) {
+					return (
+						<a key={link} href={link} {...commonProps}>
+							<Icon size={18} />
+							{vertical && <span>{t(label)}</span>}
+						</a>
+					);
+				}
+
+				// external (optional safety)
+				if (isExternalLink(link)) {
+					return (
+						<a
+							key={link}
+							href={link}
+							target='_blank'
+							rel='noreferrer'
+							{...commonProps}
+						>
+							<Icon size={18} />
+							{vertical && <span>{t(label)}</span>}
+						</a>
+					);
+				}
+
+				// internal route (./aaa/bbb or /aaa/bbb)
+				return (
+					<Link
+						key={link}
+						to={link}
+						title={!vertical ? t(label) : undefined}
+					>
+						<Icon size={18} />
+						{vertical && <span>{t(label)}</span>}
+					</Link>
+				);
+			})}
 		</>
 	);
 }
