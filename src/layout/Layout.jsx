@@ -3,20 +3,24 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import TitleSync from './TitleSync.jsx';
 
 export default function Layout() {
 	return (
-		<div
-			id='top'
-			className='min-h-screen flex flex-col bg-[rgb(var(--c-surface))] text-[rgb(var(--c-text))]'
-		>
-			<Navbar />
+		<>
+			<TitleSync />
+			<div
+				id='top'
+				className='min-h-screen flex flex-col bg-[rgb(var(--c-surface))] text-[rgb(var(--c-text))]'
+			>
+				<Navbar />
 
-			<main className='flex-1 w-full px-4 py-6'>
-				<Outlet />
-			</main>
+				<main className='flex-1 w-full px-4 py-6'>
+					<Outlet />
+				</main>
 
-			<Footer />
-		</div>
+				<Footer />
+			</div>
+		</>
 	);
 }
