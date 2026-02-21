@@ -5,8 +5,12 @@
 		center fixed;
 	background-size: cover;
 	position: relative;
-	min-height: 86vh;
-	margin: 2em 0;
+	min-height: 100vh;
+
+	/* Defaults for glow */
+	--glow-x: 10%;
+	--glow-y: 50%;
+	--glow-a: 0.3; /* intensity */
 }
 
 #home-page section {
@@ -14,18 +18,50 @@
 	z-index: 2;
 }
 
-/* keep overlay inside home page only */
 #home-page > .background-overlay {
 	position: absolute;
 	inset: 0;
-	background: radial-gradient(
-		circle at 10% 50%,
-		rgba(0, 0, 0, 0) 0%,
-		rgba(100, 100, 255, 0.4) 50%
-	);
 	z-index: 1;
 	pointer-events: none;
+
+	/* Premium look */
+	filter: blur(20px);
+	opacity: 0.35;
+
+	/* Smooth easing */
 	transition:
-		background-position var(--transition-duration) ease,
-		background var(--transition-duration) ease;
+		opacity 200ms ease,
+		filter 250ms ease;
+
+	/* Gradient defined ONCE, driven by CSS vars */
+	background:
+		radial-gradient(
+			circle at var(--glow-x) var(--glow-y),
+			color-mix(
+					in srgb,
+					var(--color-brand) calc(var(--glow-a) * 100%),
+					transparent
+				)
+				0%,
+			transparent 45%
+		),
+		radial-gradient(
+			circle at calc(var(--glow-x) + 5%) calc(var(--glow-y) + 5%),
+			color-mix(in srgb, var(--color-brand) 20%, transparent) 0%,
+			transparent 60%
+		);
+}
+
+/* Optional: slightly reduce glow on small screens */
+@media (max-width: 640px) {
+	#home-page > .background-overlay {
+		filter: blur(14px);
+	}
+}
+
+/* Touch devices: no glow (JS will also disable) */
+@media (hover: none) and (pointer: coarse) {
+	#home-page > .background-overlay {
+		display: none;
+	}
 }
