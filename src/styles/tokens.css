@@ -1,0 +1,27 @@
+/*! src/styles/tokens.css */
+
+@layer base {
+	:root {
+		/* Neutral palette as RGB triplets so we can do rgb(var(--x)) */
+		--c-text: 39 39 42; /* zinc-800 */
+		--c-muted: 82 82 91; /* zinc-600 */
+		--c-border: 228 228 231; /* zinc-200 */
+		--c-surface: 255 255 255; /* white */
+
+		--c-hover: 244 244 245; /* zinc-100 */
+		--c-active: 244 244 245; /* zinc-100 */
+		--c-popover: 255 255 255; /* white */
+		--c-shadow: 0 0 0; /* (not used directly; optional) */
+	}
+
+	.dark {
+		--c-text: 244 244 245; /* zinc-100 */
+		--c-muted: 161 161 170; /* zinc-400 */
+		--c-border: 39 39 42; /* zinc-800 */
+		--c-surface: 9 9 11; /* zinc-950 */
+
+		--c-hover: 24 24 27; /* zinc-900 */
+		--c-active: 24 24 27; /* zinc-900 */
+		--c-popover: 9 9 11; /* zinc-950 */
+	}
+}

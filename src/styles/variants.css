@@ -1,0 +1,9 @@
+/*! src/styles/variants.css */
+
+/* Dark variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme-* variants */
+@custom-variant theme-dark (&:where([data-theme="dark"] *));
+@custom-variant theme-light (&:where([data-theme="light"] *));
+@custom-variant theme-system (&:where([data-theme="system"] *));

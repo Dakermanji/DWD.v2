@@ -49,7 +49,7 @@ export default function ThemeSwitcher({ vertical = false }) {
 				onClick={toggle}
 				aria-label={menuLabel}
 				title={!vertical ? menuLabel : undefined}
-				className='icon-btn ui-ddbtn'
+				className='nav-icon-btn ui-ddbtn'
 			>
 				<CurrentIcon size={16} />
 			</button>

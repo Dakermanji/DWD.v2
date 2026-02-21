@@ -7,7 +7,7 @@ export default function LanguageButton({ current, onClick, title, ariaLabel }) {
 			onClick={onClick}
 			aria-label={ariaLabel}
 			title={title}
-			className='icon-btn ui-ddbtn ui-langbtn'
+			className='nav-icon-btn ui-ddbtn ui-langbtn'
 		>
 			<img
 				src={current.flag}

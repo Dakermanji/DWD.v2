@@ -1,0 +1,10 @@
+/*! src/styles/theme.css */
+
+@theme {
+	--color-brand: #ff7f27;
+
+	--font-sans:
+		'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial,
+		sans-serif;
+	--font-display: 'Poppins', var(--font-sans);
+}

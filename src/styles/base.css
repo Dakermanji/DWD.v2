@@ -1,0 +1,17 @@
+/*! src/styles/base.css */
+
+@layer base {
+	html,
+	body,
+	#root {
+		height: 100%;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	button {
+		@apply cursor-pointer;
+	}
+}

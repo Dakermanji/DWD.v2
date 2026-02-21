@@ -1,0 +1,43 @@
+/*! src/styles/components/Navbar/dropdown.css */
+
+@layer components {
+	.ui-dd {
+		@apply relative inline-flex;
+	}
+
+	.ui-ddbtn {
+		@apply focus:outline-none focus:ring-2 focus:ring-brand;
+		@apply relative inline-flex;
+	}
+
+	.ui-ddmenu {
+		@apply absolute z-50 min-w-44 overflow-hidden rounded-xl border shadow-sm;
+		@apply border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] text-[rgb(var(--c-text))];
+		top: calc(100% + 10px);
+	}
+
+	.ui-dd[data-rtl='false'] .ui-ddmenu {
+		@apply right-0;
+	}
+
+	.ui-dd[data-rtl='true'] .ui-ddmenu {
+		@apply left-0;
+	}
+
+	.ui-dditem {
+		@apply w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors;
+		@apply hover:bg-[rgb(var(--c-hover))];
+	}
+
+	.ui-dditem[data-active='true'] {
+		@apply text-brand;
+	}
+	/* Language button tweaks */
+	.ui-langbtn {
+		@apply h-9 w-12 px-1 py-0;
+	}
+
+	.ui-langbtn img {
+		@apply rounded-sm;
+	}
+}

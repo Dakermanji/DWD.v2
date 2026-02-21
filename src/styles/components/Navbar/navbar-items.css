@@ -1,0 +1,49 @@
+/*! src/styles/components/Navbar/navbar-items.css */
+
+@layer components {
+	.ui-brand {
+		@apply font-display font-semibold text-lg tracking-tight transition-opacity;
+		@apply text-[rgb(var(--c-text))];
+		@apply hover:opacity-80;
+	}
+
+	.ui-navcontent {
+		@apply flex;
+	}
+
+	.ui-navcontent--row {
+		@apply items-center gap-6;
+	}
+
+	.ui-navcontent--col {
+		@apply flex-col gap-4;
+	}
+
+	.ui-navlink {
+		@apply flex items-center gap-2 rounded-md px-2 py-1 text-sm transition-colors;
+		@apply text-[rgb(var(--c-text))];
+		@apply hover:bg-[rgb(var(--c-hover))];
+		@apply hover:text-brand;
+	}
+
+	.ui-navlink--center {
+		@apply justify-center;
+	}
+
+	.ui-navaction {
+		@apply text-[rgb(var(--c-text))];
+		@apply hover:bg-[rgb(var(--c-hover))];
+		@apply hover:text-brand;
+	}
+
+	.nav-icon-btn {
+		@apply inline-flex items-center justify-center rounded-md px-3 py-2 text-sm border transition;
+		@apply border-[rgb(var(--c-border))] text-[rgb(var(--c-text))];
+		@apply hover:bg-[rgb(var(--c-hover))];
+		@apply bg-transparent;
+	}
+
+	.nav-icon-btn[data-active='true'] {
+		@apply border-brand text-brand;
+	}
+}
