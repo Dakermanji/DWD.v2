@@ -14,4 +14,8 @@
 	button {
 		@apply cursor-pointer;
 	}
+
+	.brand-letter {
+		color: var(--color-brand);
+	}
 }

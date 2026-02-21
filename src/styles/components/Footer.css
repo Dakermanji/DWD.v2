@@ -2,6 +2,7 @@
 
 @layer components {
 	.ui-footer {
+		@apply fixed bottom-0 left-0 w-full z-50;
 		@apply border-t;
 		@apply border-[rgb(var(--c-border))];
 		@apply bg-[rgb(var(--c-hover))];

@@ -15,7 +15,7 @@ export default function Layout() {
 			>
 				<Navbar />
 
-				<main className='flex-1 w-full px-4 py-6'>
+				<main className='flex-1 w-full py-6'>
 					<Outlet />
 				</main>
 

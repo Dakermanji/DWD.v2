@@ -7,12 +7,14 @@ import AboutSection from './sections/AboutSection';
 import ServicesSection from './sections/ServicesSection';
 import PortfolioSection from './sections/PortfolioSection';
 import ContactSection from './sections/ContactSection';
+import '../../styles/home/main.css';
 
 export default function HomePage() {
 	const { t } = useTranslation();
 
 	return (
-		<main style={{ padding: 24 }}>
+		<main id='home-page' style={{ padding: 24 }}>
+			<div className='background-overlay' />
 			<HeroSection />
 			<AboutSection />
 			<ServicesSection />
