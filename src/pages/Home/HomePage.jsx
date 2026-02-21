@@ -1,7 +1,7 @@
 //! src/pages/Home/HomePage.jsx
 
 import { useRef } from 'react';
-import '../../styles/home/main.css';
+import './styles/main.css';
 import useHomeGlow from './hooks/useHomeGlow';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
