@@ -5,14 +5,28 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { supportedLanguageCodes } from '../config/languages.js';
 
-import enCommon from './locales/en/common.json';
-import frCommon from './locales/fr/common.json';
-import arCommon from './locales/ar/common.json';
+// Namespaces
+import enLayout from './locales/en/layout.json';
+import frLayout from './locales/fr/layout.json';
+import arLayout from './locales/ar/layout.json';
+
+import enHome from './locales/en/home.json';
+import frHome from './locales/fr/home.json';
+import arHome from './locales/ar/home.json';
 
 const resources = {
-	en: { translation: enCommon },
-	fr: { translation: frCommon },
-	ar: { translation: arCommon },
+	en: {
+		layout: enLayout,
+		home: enHome,
+	},
+	fr: {
+		layout: frLayout,
+		home: frHome,
+	},
+	ar: {
+		layout: arLayout,
+		home: arHome,
+	},
 };
 
 i18n.use(
@@ -29,6 +43,11 @@ i18n.use(
 		fallbackLng: 'en',
 		supportedLngs: supportedLanguageCodes,
 		nonExplicitSupportedLngs: true, // maps fr-CA -> fr, en-US -> en
+
+		// namespaces
+		ns: ['layout', 'home'],
+		defaultNS: 'layout',
+
 		interpolation: { escapeValue: false },
 		react: { useSuspense: false },
 	});
