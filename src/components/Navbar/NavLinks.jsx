@@ -61,6 +61,7 @@ export default function NavLinks({ vertical = false }) {
 						key={link}
 						to={link}
 						title={!vertical ? t(label) : undefined}
+						className={cls}
 					>
 						<Icon size={18} />
 						{vertical && <span>{t(label)}</span>}

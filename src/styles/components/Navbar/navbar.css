@@ -18,5 +18,6 @@
 
 	.ui-navbar-mobile {
 		@apply py-4;
+		width: max-content;
 	}
 }

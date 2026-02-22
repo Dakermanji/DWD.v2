@@ -9,11 +9,7 @@ export default function LanguageButton({ current, onClick, title, ariaLabel }) {
 			title={title}
 			className='nav-icon-btn ui-ddbtn ui-langbtn'
 		>
-			<img
-				src={current.flag}
-				alt={current.altFlag || current.label}
-				className='h-6 w-auto'
-			/>
+			<img src={current.flag} alt={current.altFlag || current.label} />
 		</button>
 	);
 }

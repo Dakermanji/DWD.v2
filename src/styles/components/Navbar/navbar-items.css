@@ -17,6 +17,9 @@
 
 	.ui-navcontent--col {
 		@apply flex-col gap-4;
+		@apply bg-[rgb(var(--c-surface))];
+		padding: 1rem;
+		@apply items-stretch;
 	}
 
 	.ui-navlink {
@@ -31,19 +34,43 @@
 	}
 
 	.ui-navaction {
+		@apply flex items-center gap-2 rounded-md px-2 py-1 text-sm transition-colors;
 		@apply text-[rgb(var(--c-text))];
 		@apply hover:bg-[rgb(var(--c-hover))];
 		@apply hover:text-brand;
 	}
 
 	.nav-icon-btn {
-		@apply inline-flex items-center justify-center rounded-md px-3 py-2 text-sm border transition;
+		@apply inline-flex items-center justify-center rounded-md border transition;
 		@apply border-[rgb(var(--c-border))] text-[rgb(var(--c-text))];
 		@apply hover:bg-[rgb(var(--c-hover))];
 		@apply bg-transparent;
+		@apply w-10 h-10 p-0;
+	}
+
+	.nav-icon-btn svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.ui-langbtn img {
+		height: 30px;
+		width: auto;
+		display: block;
+		border-radius: 4px;
 	}
 
 	.nav-icon-btn[data-active='true'] {
 		@apply border-brand text-brand;
+	}
+
+	.ui-navcontent--col .ui-navlink,
+	.ui-navcontent--col .ui-navaction {
+		@apply justify-start;
+	}
+
+	.ui-navtools {
+		@apply flex items-center justify-between gap-3 pt-3 mt-2 border-t;
+		@apply border-[rgb(var(--c-border))];
 	}
 }
