@@ -3,9 +3,8 @@
 @layer components {
 	.ui-footer {
 		@apply fixed bottom-0 left-0 w-full z-50;
-		@apply border-t;
-		@apply border-[rgb(var(--c-border))];
-		@apply bg-[rgb(var(--c-hover))];
+		@apply bg-[rgb(var(--c-surface))];
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.035);
 	}
 
 	.ui-footer-inner {

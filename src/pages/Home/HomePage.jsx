@@ -16,13 +16,13 @@ export default function HomePage() {
 	useHomeGlow(mainRef);
 
 	return (
-		<main id='home-page' ref={mainRef}>
+		<div id='home-page' ref={mainRef}>
 			<div className='background-overlay' />
 			<HeroSection />
 			<AboutSection />
 			<ServicesSection />
 			<PortfolioSection />
 			<ContactSection />
-		</main>
+		</div>
 	);
 }

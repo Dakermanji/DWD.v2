@@ -2,18 +2,18 @@
 
 @layer base {
 	:root {
-		/* Calm light theme (no pure white) */
+		/* Soft light theme (warmer neutral, less white) */
 
 		--c-text: 24 24 27; /* zinc-900 */
 		--c-muted: 82 82 91; /* zinc-600 */
 
-		--c-surface: 242 242 245; /* soft gray background */
-		--c-popover: 248 248 250; /* slightly lighter than surface */
+		--c-surface: 228 230 235; /* softer, less white */
+		--c-popover: 235 237 242; /* slightly lighter than surface */
 
-		--c-border: 220 220 225; /* soft border */
+		--c-border: 210 212 218; /* subtle but visible */
 
-		--c-hover: 232 232 236; /* gentle hover */
-		--c-active: 224 224 230; /* slightly deeper than hover */
+		--c-hover: 218 220 226;
+		--c-active: 208 210 216;
 
 		--c-shadow: 0 0 0;
 	}

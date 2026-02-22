@@ -3,9 +3,8 @@
 @layer components {
 	.ui-navbar {
 		@apply fixed top-0 left-0 w-full z-50;
-		@apply border-b;
-		@apply border-[rgb(var(--c-border))];
 		@apply bg-[rgb(var(--c-surface))];
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
 	}
 
 	.ui-navbar-inner {
