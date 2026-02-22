@@ -23,16 +23,20 @@ export default function HeroSection() {
 					<Trans
 						ns='home'
 						i18nKey='hero.intro'
+						parent={null}
 						components={{
 							brand: <span className='brand-letter' />,
+							country: <span className='country-with-flag' />,
+							flag: (
+								<img
+									src={canadaFlag}
+									alt={t('hero.canadaFlag')}
+									className='flag-icon'
+									loading='lazy'
+									decoding='async'
+								/>
+							),
 						}}
-					/>{' '}
-					<img
-						src={canadaFlag}
-						alt={t('hero.canadaFlag')}
-						className='flag-icon'
-						loading='lazy'
-						decoding='async'
 					/>
 				</h1>
 			</div>
