@@ -9,6 +9,7 @@
 
 	html {
 		scroll-behavior: smooth;
+		scroll-padding-top: var(--h-navbar);
 	}
 
 	button {
@@ -17,5 +18,11 @@
 
 	.brand-letter {
 		color: var(--color-brand);
+	}
+
+	.app-main {
+		padding-top: var(--h-navbar);
+		padding-bottom: var(--h-footer);
+		min-height: calc(100vh - var(--h-navbar) - var(--h-footer));
 	}
 }

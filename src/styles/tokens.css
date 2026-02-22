@@ -16,6 +16,9 @@
 		--c-active: 208 210 216;
 
 		--c-shadow: 0 0 0;
+
+		--h-navbar: 4rem; /* 64px if root = 16px */
+		--h-footer: 3.5rem; /* 56px if root = 16px */
 	}
 
 	.dark {

@@ -1,7 +1,7 @@
 /*! src/pages/Home/styles/hero.css */
 
 #hero {
-	height: 100vh;
+	min-height: calc(100vh - var(--h-navbar) - var(--h-footer));
 	position: relative;
 	margin: 0;
 	padding: 10vw;
