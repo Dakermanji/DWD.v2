@@ -29,5 +29,9 @@
 	"footer": {
 		"rights": "All rights reserved.",
 		"backToTop": "Back to top"
+	},
+	"tooSmall": {
+		"title": "Screen too small",
+		"description": "Your screen is too small to display the content properly. Please try rotating your device, zooming out, or reducing text size."
 	}
 }
