@@ -1,16 +1,14 @@
 //! src/components/LanguageSwitcher/LanguageSwitcher.jsx
 
-import { useMemo, useRef, useState } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../config/languages.js';
+import Dropdown from '../Shared/Dropdown.jsx';
 import LanguageButton from './LanguageButton.jsx';
 import LanguageMenu from './LanguageMenu.jsx';
-import useOutsideClick from '../../hooks/useOutsideClick.js';
 
 export default function LanguageSwitcher({ vertical = false }) {
 	const { i18n, t } = useTranslation();
-	const [open, setOpen] = useState(false);
-	const wrapRef = useRef(null);
 
 	const currentCode = (i18n.resolvedLanguage || 'en').split('-')[0];
 	const current = useMemo(
@@ -21,37 +19,30 @@ export default function LanguageSwitcher({ vertical = false }) {
 	const isRtl = i18n.dir() === 'rtl';
 	const label = t('lang.label');
 
-	useOutsideClick(wrapRef, () => setOpen(false), open);
-
-	function toggle() {
-		setOpen((v) => !v);
-	}
-
-	function selectLang(code) {
+	function selectLang(code, close) {
 		i18n.changeLanguage(code);
-		setOpen(false);
+		close();
 	}
 
 	return (
-		<div
-			ref={wrapRef}
-			className='ui-dd'
-			data-rtl={isRtl ? 'true' : 'false'}
+		<Dropdown
+			isRtl={isRtl}
+			button={({ toggle }) => (
+				<LanguageButton
+					current={current}
+					onClick={toggle}
+					title={!vertical ? label : undefined}
+					ariaLabel={label}
+				/>
+			)}
 		>
-			<LanguageButton
-				current={current}
-				onClick={toggle}
-				title={!vertical ? label : undefined}
-				ariaLabel={label}
-			/>
-
-			{open && (
+			{({ close }) => (
 				<LanguageMenu
 					items={languages}
 					activeCode={current.code}
-					onSelect={selectLang}
+					onSelect={(code) => selectLang(code, close)}
 				/>
 			)}
-		</div>
+		</Dropdown>
 	);
 }

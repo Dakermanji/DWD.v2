@@ -1,21 +1,16 @@
 //! src/components/ThemeSwitcher/ThemeSwitcher.jsx
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { applyTheme, getThemeMode } from '../../theme/theme.js';
 import { themeModes } from '../../config/themes.js';
-import useOutsideClick from '../../hooks/useOutsideClick.js';
+import Dropdown from '../Shared/Dropdown.jsx';
 
 export default function ThemeSwitcher({ vertical = false }) {
 	const { i18n, t } = useTranslation();
 
-	const [open, setOpen] = useState(false);
 	const [mode, setMode] = useState(getThemeMode());
-
-	const wrapRef = useRef(null);
 	const isRtl = i18n.dir() === 'rtl';
-
-	useOutsideClick(wrapRef, () => setOpen(false), open);
 
 	useEffect(() => {
 		applyTheme(mode);
@@ -27,49 +22,44 @@ export default function ThemeSwitcher({ vertical = false }) {
 	);
 
 	const CurrentIcon = current.icon;
-	const menuLabel = t('theme.label'); // e.g. "Theme"
+	const menuLabel = t('theme.label');
 
-	function toggle() {
-		setOpen((v) => !v);
-	}
-
-	function select(key) {
+	function select(key, close) {
 		setMode(key);
-		setOpen(false);
+		close();
 	}
 
 	return (
-		<div
-			ref={wrapRef}
-			className='ui-dd'
-			data-rtl={isRtl ? 'true' : 'false'}
+		<Dropdown
+			isRtl={isRtl}
+			button={({ toggle }) => (
+				<button
+					type='button'
+					onClick={toggle}
+					aria-label={menuLabel}
+					title={!vertical ? menuLabel : undefined}
+					className='nav-icon-btn ui-ddbtn'
+				>
+					<CurrentIcon />
+				</button>
+			)}
 		>
-			<button
-				type='button'
-				onClick={toggle}
-				aria-label={menuLabel}
-				title={!vertical ? menuLabel : undefined}
-				className='nav-icon-btn ui-ddbtn'
-			>
-				<CurrentIcon size={16} />
-			</button>
-
-			{open && (
+			{({ close }) => (
 				<div className='ui-ddmenu'>
 					{themeModes.map(({ key, label, icon: Icon }) => (
 						<button
 							key={key}
 							type='button'
-							onClick={() => select(key)}
+							onClick={() => select(key, close)}
 							className='ui-dditem'
 							data-active={mode === key ? 'true' : 'false'}
 						>
-							<Icon size={16} />
+							<Icon />
 							<span>{t(label)}</span>
 						</button>
 					))}
 				</div>
 			)}
-		</div>
+		</Dropdown>
 	);
 }
