@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { applyTheme, getThemeMode } from '../../theme/theme.js';
 import { themeModes } from '../../config/themes.js';
 import Dropdown from '../Shared/Dropdown.jsx';
+import DropdownMenu from '../Shared/DropdownMenu.jsx';
+import DropdownItem from '../Shared/DropdownItem.jsx';
 
 export default function ThemeSwitcher({ vertical = false }) {
 	const { i18n, t } = useTranslation();
@@ -45,20 +47,18 @@ export default function ThemeSwitcher({ vertical = false }) {
 			)}
 		>
 			{({ close }) => (
-				<div className='ui-ddmenu'>
+				<DropdownMenu>
 					{themeModes.map(({ key, label, icon: Icon }) => (
-						<button
+						<DropdownItem
 							key={key}
-							type='button'
+							active={mode === key}
 							onClick={() => select(key, close)}
-							className='ui-dditem'
-							data-active={mode === key ? 'true' : 'false'}
 						>
 							<Icon />
 							<span>{t(label)}</span>
-						</button>
+						</DropdownItem>
 					))}
-				</div>
+				</DropdownMenu>
 			)}
 		</Dropdown>
 	);
