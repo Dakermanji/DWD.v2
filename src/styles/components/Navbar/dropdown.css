@@ -16,12 +16,16 @@
 		top: calc(100% + 10px);
 	}
 
-	.ui-dd[data-rtl='false'] .ui-ddmenu {
-		@apply right-0;
+	.ui-dd .ui-ddmenu {
+		inset-inline-start: 0;
+		inset-inline-end: auto;
 	}
 
-	.ui-dd[data-rtl='true'] .ui-ddmenu {
-		@apply left-0;
+	@media (min-width: 768px) {
+		.ui-dd .ui-ddmenu {
+			inset-inline-start: auto;
+			inset-inline-end: 0;
+		}
 	}
 
 	.ui-dditem {
