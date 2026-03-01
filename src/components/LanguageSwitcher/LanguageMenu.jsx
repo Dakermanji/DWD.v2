@@ -1,7 +1,7 @@
 //! src/components/LanguageSwitcher/LanguageMenu.jsx
 
-import DropdownMenu from '../Shared/DropdownMenu.jsx';
-import DropdownItem from '../Shared/DropdownItem.jsx';
+import DropdownMenu from '../ui/DropdownMenu.jsx';
+import DropdownItem from '../ui/DropdownItem.jsx';
 
 export default function LanguageMenu({ items, activeCode, onSelect }) {
 	return (

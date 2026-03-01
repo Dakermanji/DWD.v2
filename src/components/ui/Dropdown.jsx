@@ -1,4 +1,4 @@
-//! src/components/Shared/Dropdown.jsx
+//! src/components/ui/Dropdown.jsx
 
 import { useRef, useState } from 'react';
 import useOutsideClick from '../../hooks/useOutsideClick.js';

@@ -1,4 +1,4 @@
-//! src/components/Shared/DropdownMenu.jsx
+//! src/components/ui/DropdownMenu.jsx
 
 export default function DropdownMenu({ className = '', children }) {
 	const cls = ['ui-ddmenu', className].filter(Boolean).join(' ');

@@ -1,4 +1,4 @@
-//! src/components/Shared/CompanyName.jsx
+//! src/components/shared/CompanyName.jsx
 
 export default function CompanyName() {
 	return (

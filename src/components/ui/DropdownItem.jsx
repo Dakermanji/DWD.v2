@@ -1,4 +1,4 @@
-//! src/components/Shared/DropdownItem.jsx
+//! src/components/ui/DropdownItem.jsx
 
 export default function DropdownItem({
 	active = false,

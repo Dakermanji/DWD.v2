@@ -1,7 +1,7 @@
 //! src/components/Footer.jsx
 
 import { useTranslation } from 'react-i18next';
-import CompanyName from './Shared/CompanyName.jsx';
+import CompanyName from './shared/CompanyName.jsx';
 
 export default function Footer() {
 	const { t } = useTranslation();

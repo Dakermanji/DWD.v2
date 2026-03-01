@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../config/languages.js';
-import Dropdown from '../Shared/Dropdown.jsx';
+import Dropdown from '../ui/Dropdown.jsx';
 import LanguageButton from './LanguageButton.jsx';
 import LanguageMenu from './LanguageMenu.jsx';
 
