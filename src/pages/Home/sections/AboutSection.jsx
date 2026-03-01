@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import aboutImage from '../../../assets/index/humanoid-robot.png';
 
 const tabsOrder = ['experience', 'skills', 'education'];
 
@@ -28,7 +29,7 @@ export default function AboutSection() {
 					{/* Left */}
 					<div className='about-media'>
 						<img
-							src='/images/index/humanoid-robot.png'
+							src={aboutImage}
 							alt={t('about.image')}
 							loading='lazy'
 							decoding='async'
