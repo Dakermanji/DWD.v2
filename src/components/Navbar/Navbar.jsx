@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Menu, X } from 'lucide-react';
 import NavBrand from './NavBrand.jsx';
 import NavContent from './NavContent.jsx';
 
@@ -19,11 +20,15 @@ export default function Navbar() {
 
 					{/* Mobile Toggle */}
 					<button
-						className='md:hidden icon-btn'
+						className='md:hidden icon-btn p-2 rounded-md transition hover:bg-[rgb(var(--c-hover))] active:bg-[rgb(var(--c-active))]'
 						onClick={() => setOpen(!open)}
 						aria-label={t('nav.toggle')}
 					>
-						☰
+						{open ? (
+							<X size={22} strokeWidth={1.8} />
+						) : (
+							<Menu size={22} strokeWidth={1.8} />
+						)}
 					</button>
 
 					{/* Desktop */}
