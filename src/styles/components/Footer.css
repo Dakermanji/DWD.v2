@@ -29,11 +29,7 @@
 }
 
 @media (max-width: 540px) {
-	.ui-footer-line,
-	.ui-footer-top span {
+	.ui-footer-line {
 		font-size: 0.625rem;
-	}
-	.ui-footer-top-icon {
-		@apply h-3 w-3;
 	}
 }
