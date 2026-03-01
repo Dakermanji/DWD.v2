@@ -12,9 +12,10 @@ function isExternalLink(link) {
 	return typeof link === 'string' && /^https?:\/\//i.test(link);
 }
 
-export default function NavLinks({ vertical = false }) {
+export default function NavLinks({ vertical = false, onNavigate }) {
 	const location = useLocation();
 	const { t } = useTranslation();
+	const handle = () => onNavigate?.();
 
 	const links = location.pathname === '/' ? navBar.index : [];
 	if (!links.length) return null;
@@ -32,7 +33,12 @@ export default function NavLinks({ vertical = false }) {
 				// #section (in-page)
 				if (isHashLink(link)) {
 					return (
-						<a key={link} href={link} {...commonProps}>
+						<a
+							key={link}
+							href={link}
+							{...commonProps}
+							onClick={handle}
+						>
 							<Icon size={18} />
 							{vertical && <span>{t(label)}</span>}
 						</a>
@@ -48,6 +54,7 @@ export default function NavLinks({ vertical = false }) {
 							target='_blank'
 							rel='noreferrer'
 							{...commonProps}
+							onClick={handle}
 						>
 							<Icon size={18} />
 							{vertical && <span>{t(label)}</span>}
@@ -62,6 +69,7 @@ export default function NavLinks({ vertical = false }) {
 						to={link}
 						title={!vertical ? t(label) : undefined}
 						className={cls}
+						onClick={handle}
 					>
 						<Icon size={18} />
 						{vertical && <span>{t(label)}</span>}

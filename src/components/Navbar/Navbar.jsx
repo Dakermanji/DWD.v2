@@ -12,13 +12,14 @@ export default function Navbar() {
 	const user = false; // placeholder until auth is added
 	const { t } = useTranslation();
 
+	const closeMenu = () => setOpen(false);
+
 	return (
 		<nav className='ui-navbar'>
 			<div className='ui-navbar-inner'>
 				<div className='ui-navbar-row'>
 					<NavBrand />
 
-					{/* Mobile Toggle */}
 					<button
 						className='md:hidden icon-btn p-2 rounded-md transition hover:bg-[rgb(var(--c-hover))] active:bg-[rgb(var(--c-active))]'
 						onClick={() => setOpen(!open)}
@@ -31,16 +32,25 @@ export default function Navbar() {
 						)}
 					</button>
 
-					{/* Desktop */}
 					<div className='hidden md:block'>
 						<NavContent user={user} />
 					</div>
 				</div>
 
+				{/* Mobile Backdrop (click outside closes) */}
+				{open && (
+					<button
+						type='button'
+						className='ui-navbar-backdrop md:hidden'
+						aria-label={t('nav.toggle')}
+						onClick={closeMenu}
+					/>
+				)}
+
 				{/* Mobile Menu */}
 				{open && (
 					<div className='md:hidden ui-navbar-mobile'>
-						<NavContent user={user} vertical />
+						<NavContent user={user} vertical onClose={closeMenu} />
 					</div>
 				)}
 			</div>

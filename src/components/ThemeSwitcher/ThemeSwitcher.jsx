@@ -8,7 +8,7 @@ import Dropdown from '../ui/Dropdown.jsx';
 import DropdownMenu from '../ui/DropdownMenu.jsx';
 import DropdownItem from '../ui/DropdownItem.jsx';
 
-export default function ThemeSwitcher({ vertical = false }) {
+export default function ThemeSwitcher({ vertical = false, onDone }) {
 	const { i18n, t } = useTranslation();
 
 	const [mode, setMode] = useState(getThemeMode());
@@ -29,6 +29,7 @@ export default function ThemeSwitcher({ vertical = false }) {
 	function select(key, close) {
 		setMode(key);
 		close();
+		onDone?.();
 	}
 
 	return (

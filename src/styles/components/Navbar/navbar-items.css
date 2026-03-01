@@ -20,6 +20,7 @@
 		@apply bg-[rgb(var(--c-surface))];
 		padding: 1rem;
 		@apply items-stretch;
+		@apply z-50 relative;
 	}
 
 	.ui-navlink {

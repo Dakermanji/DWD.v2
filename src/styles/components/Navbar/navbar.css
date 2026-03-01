@@ -20,4 +20,9 @@
 		@apply py-4;
 		width: max-content;
 	}
+
+	.ui-navbar-backdrop {
+		@apply fixed inset-0 z-40;
+		background: rgba(0, 0, 0, 0.18);
+	}
 }

@@ -7,7 +7,7 @@ import Dropdown from '../ui/Dropdown.jsx';
 import LanguageButton from './LanguageButton.jsx';
 import LanguageMenu from './LanguageMenu.jsx';
 
-export default function LanguageSwitcher({ vertical = false }) {
+export default function LanguageSwitcher({ vertical = false, onDone }) {
 	const { i18n, t } = useTranslation();
 
 	const currentCode = (i18n.resolvedLanguage || 'en').split('-')[0];
@@ -22,6 +22,7 @@ export default function LanguageSwitcher({ vertical = false }) {
 	function selectLang(code, close) {
 		i18n.changeLanguage(code);
 		close();
+		onDone?.();
 	}
 
 	return (
