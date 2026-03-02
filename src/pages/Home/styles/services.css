@@ -70,13 +70,6 @@
 	border-color: rgba(var(--color-brand), 0.28);
 }
 
-.service-card-title {
-	font-size: 1.25rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
-	color: rgb(var(--c-text));
-}
-
 .service-card-description {
 	color: rgb(var(--c-muted));
 	line-height: 1.6;

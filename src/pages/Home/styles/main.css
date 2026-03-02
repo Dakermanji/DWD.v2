@@ -60,6 +60,13 @@
 	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
+#home-page .card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: rgb(var(--c-text));
+}
+
 /* Optional: slightly reduce glow on small screens */
 @media (max-width: 640px) {
 	#home-page > .background-overlay {

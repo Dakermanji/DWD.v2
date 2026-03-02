@@ -1,5 +1,7 @@
 //! src/pages/Home/components/PortfolioCard.jsx
 
+import CardTitle from '../../../components/shared/CardTitle.jsx';
+
 export default function PortfolioCard({
 	title,
 	imgSrc,
@@ -16,7 +18,7 @@ export default function PortfolioCard({
 				href={disabled ? undefined : href}
 				aria-disabled={disabled ? 'true' : undefined}
 			>
-				<h4 className='portfolio-title'>{title}</h4>
+				<CardTitle title={title} />
 
 				<img
 					src={imgSrc}

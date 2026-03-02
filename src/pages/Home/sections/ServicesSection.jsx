@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import { Workflow, Database, Braces } from 'lucide-react';
 import SectionTitle from '../../../components/shared/SectionTitle.jsx';
+import CardTitle from '../../../components/shared/CardTitle.jsx';
 
 const ICONS = {
 	workflow: Workflow,
@@ -33,9 +34,7 @@ export default function ServicesSection() {
 										<Icon />
 									</div>
 
-									<h3 className='service-card-title'>
-										{service.title}
-									</h3>
+									<CardTitle title={service.title} />
 									<p className='service-card-description'>
 										{service.description}
 									</p>

@@ -34,11 +34,11 @@
 	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
 }
 
-.portfolio-card h4 {
+.portfolio-card h3 {
 	transition: color 0.25s ease;
 }
 
-.portfolio-card:hover h4 {
+.portfolio-card:hover h3 {
 	color: var(--color-brand);
 }
 
@@ -53,13 +53,6 @@
 .portfolio-link.disabled {
 	cursor: default;
 	pointer-events: none;
-}
-
-.portfolio-title {
-	font-size: 1.2rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
-	color: rgb(var(--c-text));
 }
 
 .portfolio-card img {
