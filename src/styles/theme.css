@@ -2,6 +2,7 @@
 
 @theme {
 	--color-brand: #ff7f27;
+	--color-brand-hover: #fa6806;
 
 	--font-sans:
 		'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial,

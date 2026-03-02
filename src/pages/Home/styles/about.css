@@ -11,15 +11,6 @@
 	padding: 0 1rem;
 }
 
-#about .section-title {
-	text-align: center;
-	font-size: 2rem;
-	font-weight: 700;
-	margin-bottom: 3rem;
-	color: rgb(var(--c-text));
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
 /* Layout */
 #about .about-grid {
 	display: grid;

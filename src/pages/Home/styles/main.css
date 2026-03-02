@@ -51,6 +51,15 @@
 		);
 }
 
+.section-title {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 3rem;
+	color: rgb(var(--c-text));
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
 /* Optional: slightly reduce glow on small screens */
 @media (max-width: 640px) {
 	#home-page > .background-overlay {

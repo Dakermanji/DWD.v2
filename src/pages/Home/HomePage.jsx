@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import './styles/main.css';
 import './styles/hero.css';
 import './styles/about.css';
+import './styles/services.css';
 import useHomeGlow from './hooks/useHomeGlow';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
