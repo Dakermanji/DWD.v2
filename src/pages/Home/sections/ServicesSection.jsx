@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { Workflow, Database, Braces } from 'lucide-react';
+import SectionTitle from '../../../components/shared/SectionTitle.jsx';
 
 const ICONS = {
 	workflow: Workflow,
@@ -17,8 +18,7 @@ export default function ServicesSection() {
 	return (
 		<section id='services' className='services-section'>
 			<div className='services-container'>
-				<h2 className='section-title'>{t('services.title')}</h2>
-
+				<SectionTitle>{t('services.title')}</SectionTitle>
 				<div className='services-grid'>
 					{Array.isArray(services) &&
 						services.map((service, index) => {

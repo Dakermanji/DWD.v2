@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import aboutImage from '../../../assets/index/humanoid-robot.png';
+import SectionTitle from '../../../components/shared/SectionTitle.jsx';
 
 const tabsOrder = ['experience', 'skills', 'education'];
 
@@ -23,8 +24,7 @@ export default function AboutSection() {
 	return (
 		<section id='about' aria-label={t('about.title')}>
 			<div className='container'>
-				<h2 className='section-title'>{t('about.title')}</h2>
-
+				<SectionTitle>{t('about.title')}</SectionTitle>
 				<div className='about-grid'>
 					{/* Left */}
 					<div className='about-media'>
