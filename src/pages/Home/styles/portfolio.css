@@ -1,0 +1,103 @@
+/*! src/pages/Home/styles/portfolio.css */
+
+.portfolio-section {
+	padding: 5rem 1.5rem;
+}
+
+.portfolio-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.portfolio-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+}
+
+.portfolio-card {
+	background-color: rgb(var(--c-popover));
+	border-radius: 1rem;
+	border: 1px solid rgb(var(--c-border));
+	overflow: hidden;
+	max-height: 400px;
+
+	transition:
+		transform 0.25s ease,
+		box-shadow 0.25s ease,
+		border-color 0.25s ease;
+}
+
+.portfolio-card:hover {
+	transform: translateY(-6px);
+	border-color: var(--color-brand);
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-card h4 {
+	transition: color 0.25s ease;
+}
+
+.portfolio-card:hover h4 {
+	color: var(--color-brand);
+}
+
+.portfolio-link {
+	display: block;
+	text-align: center;
+	padding: 1.5rem;
+	text-decoration: none;
+	color: inherit;
+}
+
+.portfolio-link.disabled {
+	cursor: default;
+	pointer-events: none;
+}
+
+.portfolio-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: rgb(var(--c-text));
+}
+
+.portfolio-card img {
+	width: 100%;
+	border-radius: 0.75rem;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover img {
+	transform: scale(1.05);
+}
+
+/* See More Button */
+
+.portfolio-btn-wrapper {
+	text-align: center;
+	margin-top: 2.5rem;
+}
+
+.portfolio-btn {
+	padding: 0.75rem 1.75rem;
+	border-radius: 999px;
+	border: none;
+	cursor: pointer;
+
+	background: var(--color-brand);
+	color: white;
+	font-weight: 600;
+
+	transition:
+		background 0.25s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.portfolio-btn:hover {
+	background: var(--color-brand-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
