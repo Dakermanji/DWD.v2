@@ -1,0 +1,39 @@
+/*! src/pages/Home/styles/contact.css */
+
+#contact .container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.contact-card {
+	position: relative;
+	margin-top: 1rem;
+
+	background: rgb(var(--c-surface) / 0.75);
+	backdrop-filter: blur(10px);
+
+	border: 1px solid rgb(var(--c-border));
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.contact-hint {
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.5rem;
+	color: var(--color-brand);
+}
+
+.contact-gate {
+	text-align: center;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border-radius: 0.75rem;
+	border: 1px dashed rgb(var(--c-border));
+	background: rgb(var(--c-popover) / 0.6);
+}
+
+.contact-form {
+	/* nothing required, but you can keep it clean */
+}

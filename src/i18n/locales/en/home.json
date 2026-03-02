@@ -149,5 +149,12 @@
 			"alt": "Cute construction worker illustration with an under construction sign"
 		},
 		"see_more_btn": "See More"
+	},
+	"contact": {
+		"title": "Contact Me",
+		"hint": "Send me a short message — I usually reply within 24–48h.",
+		"guest": "Please sign in / sign up to send a message.",
+		"subject": "Subject",
+		"message": "Message"
 	}
 }

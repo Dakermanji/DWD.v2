@@ -149,5 +149,12 @@
 			"alt": "Illustration mignonne d’un ouvrier avec un panneau chantier en cours"
 		},
 		"see_more_btn": "Voir plus"
+	},
+	"contact": {
+		"title": "Me contacter",
+		"hint": "Envoyez-moi un court message — je réponds généralement sous 24 à 48 heures.",
+		"guest": "Veuillez vous connecter ou créer un compte pour envoyer un message.",
+		"subject": "Sujet",
+		"message": "Message"
 	}
 }

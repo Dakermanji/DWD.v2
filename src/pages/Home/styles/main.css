@@ -5,6 +5,7 @@
 		center fixed;
 	background-size: cover;
 	position: relative;
+	padding-bottom: 2rem;
 
 	/* Defaults for glow */
 	--glow-x: 10%;
@@ -79,4 +80,31 @@
 	#home-page > .background-overlay {
 		display: none;
 	}
+}
+
+#home-page .section-btn-wrapper {
+	text-align: center;
+	margin-top: 2.5rem;
+}
+
+#home-page .section-btn {
+	padding: 0.75rem 1.75rem;
+	border-radius: 999px;
+	border: none;
+	cursor: pointer;
+
+	background: var(--color-brand);
+	color: white;
+	font-weight: 600;
+
+	transition:
+		background 0.25s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+#home-page .section-btn:hover {
+	background: var(--color-brand-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }

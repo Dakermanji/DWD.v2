@@ -6,6 +6,7 @@ import './styles/hero.css';
 import './styles/about.css';
 import './styles/services.css';
 import './styles/portfolio.css';
+import './styles/contact.css';
 import useHomeGlow from './hooks/useHomeGlow';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';

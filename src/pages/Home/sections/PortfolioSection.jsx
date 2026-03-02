@@ -45,9 +45,9 @@ export default function PortfolioSection() {
 				</div>
 
 				{canSeeMore && (
-					<div className='portfolio-btn-wrapper'>
+					<div className='section-btn-wrapper'>
 						<button
-							className='portfolio-btn'
+							className='section-btn'
 							type='button'
 							onClick={() => setVisibleCount((c) => c + 3)}
 							aria-label={t('portfolio.see_more_btn')}
