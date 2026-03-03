@@ -1,6 +1,6 @@
 //! src/components/ThemeSwitcher/ThemeSwitcher.jsx
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { applyTheme, getThemeMode } from '../../theme/theme.js';
 import { themeModes } from '../../config/themes.js';
@@ -14,10 +14,6 @@ export default function ThemeSwitcher({ vertical = false, onDone }) {
 	const [mode, setMode] = useState(getThemeMode());
 	const isRtl = i18n.dir() === 'rtl';
 
-	useEffect(() => {
-		applyTheme(mode);
-	}, [mode]);
-
 	const current = useMemo(
 		() => themeModes.find((m) => m.key === mode) || themeModes[0],
 		[mode],
@@ -27,7 +23,8 @@ export default function ThemeSwitcher({ vertical = false, onDone }) {
 	const menuLabel = t('theme.label');
 
 	function select(key, close) {
-		setMode(key);
+		applyTheme(key); // ✅ apply immediately (works even if component unmounts)
+		setMode(key); // keep local state in sync (desktop icon updates)
 		close();
 		onDone?.();
 	}
