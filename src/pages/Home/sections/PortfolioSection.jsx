@@ -1,22 +1,49 @@
 //! src/pages/Home/sections/PortfolioSection.jsx
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import SectionTitle from '../../../components/shared/SectionTitle';
 import SectionButton from '../../../components/shared/SectionButton';
 import PortfolioCard from '../components/PortfolioCard.jsx';
+import useCardsPerRow from '../hooks/useCardsPerRow.js';
 
 import '../styles/portfolio.css';
 
 export default function PortfolioSection() {
 	const { t, i18n } = useTranslation('home');
-	const [visibleCount, setVisibleCount] = useState(3);
 
-	const items = t('portfolio.items', { returnObjects: true }) || [];
+	const cardsPerRow = useCardsPerRow();
+
+	// Visible grows by cardsPerRow (1/2/3)
+	const [visibleCount, setVisibleCount] = useState(cardsPerRow);
+
+	// Keep visibleCount aligned with cardsPerRow if screen changes
+	const alignedVisibleCount = useMemo(() => {
+		return Math.max(
+			cardsPerRow,
+			Math.ceil(visibleCount / cardsPerRow) * cardsPerRow,
+		);
+	}, [visibleCount, cardsPerRow]);
+
+	const items = useMemo(() => {
+		const raw = t('portfolio.items', { returnObjects: true });
+		return Array.isArray(raw) ? raw : [];
+	}, [t]);
+
 	const lang = i18n.resolvedLanguage || i18n.language;
 
-	const canSeeMore = Array.isArray(items) && visibleCount < items.length;
+	// Under Construction is treated as 1 extra card at the end
+	const totalCards = items.length + 1;
+
+	const clampedVisible = Math.min(alignedVisibleCount, totalCards);
+
+	const visibleProjects = useMemo(() => {
+		return items.slice(0, Math.min(clampedVisible, items.length));
+	}, [items, clampedVisible]);
+
+	const showUnderConstruction = clampedVisible > items.length;
+	const canSeeMore = clampedVisible < totalCards;
 
 	return (
 		<section id='portfolio' className='portfolio-section'>
@@ -24,19 +51,17 @@ export default function PortfolioSection() {
 				<SectionTitle>{t('portfolio.title')}</SectionTitle>
 
 				<div className='portfolio-grid'>
-					{Array.isArray(items) &&
-						items.slice(0, visibleCount).map((item) => (
-							<PortfolioCard
-								key={item.id ?? item.link ?? item.title}
-								title={item.title}
-								href={`/${item.link}`}
-								imgSrc={`/images/index/projects/${item.img}`}
-								imgAlt={t('screenshot_of', {
-									title: item.title,
-								})}
-							/>
-						))}
-					{!canSeeMore && (
+					{visibleProjects.map((item) => (
+						<PortfolioCard
+							key={item.id ?? item.link ?? item.title}
+							title={item.title}
+							href={`/${item.link}`}
+							imgSrc={`/images/index/projects/${item.img}`}
+							imgAlt={t('screenshot_of', { title: item.title })}
+						/>
+					))}
+
+					{showUnderConstruction && (
 						<PortfolioCard
 							disabled
 							title={t('portfolio.under_construction.title')}
@@ -48,7 +73,7 @@ export default function PortfolioSection() {
 
 				{canSeeMore && (
 					<SectionButton
-						onClick={() => setVisibleCount((c) => c + 3)}
+						onClick={() => setVisibleCount((c) => c + cardsPerRow)}
 						ariaLabel={t('portfolio.see_more_btn')}
 					>
 						{t('portfolio.see_more_btn')}
