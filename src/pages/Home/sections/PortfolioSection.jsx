@@ -36,13 +36,14 @@ export default function PortfolioSection() {
 								})}
 							/>
 						))}
-
-					<PortfolioCard
-						disabled
-						title={t('portfolio.under_construction.title')}
-						imgSrc={`/images/index/projects/under_construction_${lang}.png`}
-						imgAlt={t('portfolio.under_construction.imgAlt')}
-					/>
+					{!canSeeMore && (
+						<PortfolioCard
+							disabled
+							title={t('portfolio.under_construction.title')}
+							imgSrc={`/images/index/projects/under_construction_${lang}.png`}
+							imgAlt={t('portfolio.under_construction.imgAlt')}
+						/>
+					)}
 				</div>
 
 				{canSeeMore && (
