@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/shared/SectionTitle';
+import SectionButton from '../../../components/shared/SectionButton';
 
 export default function ContactSection({ user, onLogin }) {
 	user = true;
@@ -25,6 +26,9 @@ export default function ContactSection({ user, onLogin }) {
 							<p className='mb-3 text-sm text-[rgb(var(--c-muted))]'>
 								{t('contact.guest')}
 							</p>
+							<SectionButton onClick={onLogin}>
+								{t('layout:auth.login_signup')}
+							</SectionButton>
 							<div className='section-btn-wrapper'>
 								<button
 									type='button'
@@ -69,11 +73,9 @@ export default function ContactSection({ user, onLogin }) {
 									className='w-full resize-y rounded-md border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] px-3 py-2 text-[rgb(var(--c-text))] outline-none focus:border-transparent focus:ring-2 focus:ring-[rgb(var(--c-text))]/15 disabled:cursor-not-allowed disabled:opacity-60'
 								/>
 							</label>
-							<div className='section-btn-wrapper'>
-								<button type='submit' className='section-btn'>
-									{t('layout:common.send')}
-								</button>
-							</div>
+							<SectionButton type='submit'>
+								{t('layout:common.send')}
+							</SectionButton>
 						</fieldset>
 					</form>
 				</div>

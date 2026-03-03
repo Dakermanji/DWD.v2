@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import SectionTitle from '../../../components/shared/SectionTitle.jsx';
+import SectionTitle from '../../../components/shared/SectionTitle';
+import SectionButton from '../../../components/shared/SectionButton';
 import PortfolioCard from '../components/PortfolioCard.jsx';
 
 import '../styles/portfolio.css';
@@ -45,16 +46,12 @@ export default function PortfolioSection() {
 				</div>
 
 				{canSeeMore && (
-					<div className='section-btn-wrapper'>
-						<button
-							className='section-btn'
-							type='button'
-							onClick={() => setVisibleCount((c) => c + 3)}
-							aria-label={t('portfolio.see_more_btn')}
-						>
-							{t('portfolio.see_more_btn')}
-						</button>
-					</div>
+					<SectionButton
+						onClick={() => setVisibleCount((c) => c + 3)}
+						ariaLabel={t('portfolio.see_more_btn')}
+					>
+						{t('portfolio.see_more_btn')}
+					</SectionButton>
 				)}
 			</div>
 		</section>
