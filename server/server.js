@@ -7,7 +7,7 @@ import logger from './config/logger.js';
 const { PORT, PROTOCOL, DOMAIN_NAME } = env;
 
 app.listen(PORT, () => {
-	logger.warn(
-		`DWD.v2 backend running on ${PROTOCOL}://${DOMAIN_NAME}:${PORT}`,
+	logger.info(
+		`🚀 DWD.v2 backend running on ${PROTOCOL}://${DOMAIN_NAME}:${PORT}`,
 	);
 });
