@@ -9,6 +9,7 @@ const env = {
 	PORT: process.env.PORT ?? 3000,
 	PROTOCOL: process.env.PROTOCOL ?? 'http',
 	DOMAIN_NAME: process.env.DOMAIN_NAME ?? 'localhost',
+	LOG_LEVEL: process.env.LOG_LEVEL ?? 'info',
 };
 
 export default env;
