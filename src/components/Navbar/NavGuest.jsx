@@ -9,7 +9,7 @@ export default function NavGuest({ vertical = false, onLogin }) {
 	const actionClass = `ui-navaction ${!vertical ? 'ui-navlink--center' : ''}`;
 
 	function handleAction(action) {
-		if (action === 'login') onLogin?.();
+		if (action === 'login_signup') onLogin?.();
 	}
 
 	return (

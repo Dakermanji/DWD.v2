@@ -48,7 +48,7 @@ export const navBar = {
 		{
 			key: 'login',
 			type: 'action',
-			action: 'login',
+			action: 'login_signup',
 			label: 'auth.login_signup',
 			icon: LogIn,
 		},

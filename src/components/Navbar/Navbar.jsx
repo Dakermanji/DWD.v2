@@ -5,14 +5,21 @@ import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import NavBrand from './NavBrand.jsx';
 import NavContent from './NavContent.jsx';
+import AuthModal from '../Auth/AuthModal.jsx';
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
+	const [authOpen, setAuthOpen] = useState(false);
 
 	const user = false; // placeholder until auth is added
 	const { t } = useTranslation();
 
 	const closeMenu = () => setOpen(false);
+
+	const openAuth = () => {
+		setAuthOpen(true);
+		setOpen(false);
+	};
 
 	return (
 		<nav className='ui-navbar'>
@@ -33,7 +40,7 @@ export default function Navbar() {
 					</button>
 
 					<div className='hidden md:block'>
-						<NavContent user={user} />
+						<NavContent user={user} onLogin={openAuth} />
 					</div>
 				</div>
 
@@ -50,9 +57,20 @@ export default function Navbar() {
 				{/* Mobile Menu */}
 				{open && (
 					<div className='md:hidden ui-navbar-mobile'>
-						<NavContent user={user} vertical onClose={closeMenu} />
+						<NavContent
+							user={user}
+							vertical
+							onClose={closeMenu}
+							onLogin={openAuth}
+						/>
 					</div>
 				)}
+
+				<AuthModal
+					open={authOpen}
+					initialTab='signin'
+					onClose={() => setAuthOpen(false)}
+				/>
 			</div>
 		</nav>
 	);
