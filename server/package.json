@@ -1,0 +1,14 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"main": "server.js",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "node --watch server.js",
+		"start": "node server.js"
+	},
+	"author": "Behnam Dakermanji",
+	"license": "ISC",
+	"packageManager": "pnpm@10.30.3"
+}
