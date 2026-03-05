@@ -52,7 +52,11 @@ export default function AboutSection() {
 							className='ui-tabs'
 						/>
 
-						<div className='about-panel' role='tabpanel'>
+						<div
+							role='tabpanel'
+							id={`panel-${activeTab}`}
+							aria-labelledby={`tab-${activeTab}`}
+						>
 							{activeTab === 'experience' && (
 								<ExperienceList items={items} />
 							)}

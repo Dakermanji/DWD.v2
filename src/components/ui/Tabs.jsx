@@ -15,6 +15,8 @@ export default function Tabs({
 						key={tab.id}
 						type='button'
 						role='tab'
+						id={`tab-${tab.id}`}
+						aria-controls={`panel-${tab.id}`}
 						aria-selected={active === tab.id}
 						className={`ui-tab ${active === tab.id ? 'is-active' : ''}`}
 						onClick={() => onChange(tab.id)}
