@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import aboutImage from '../../../assets/index/humanoid-robot.png';
 import SectionTitle from '../../../components/shared/SectionTitle.jsx';
+import Tabs from '../../../components/ui/Tabs.jsx';
 
 const tabsOrder = ['experience', 'skills', 'education'];
 
@@ -43,24 +44,13 @@ export default function AboutSection() {
 								description.map((p, i) => <p key={i}>{p}</p>)}
 						</div>
 
-						<div
-							className='about-tabs'
-							role='tablist'
-							aria-label={t('about.title')}
-						>
-							{tabs.map((tab) => (
-								<button
-									key={tab.id}
-									type='button'
-									role='tab'
-									aria-selected={activeTab === tab.id}
-									className={`about-tab ${activeTab === tab.id ? 'is-active' : ''}`}
-									onClick={() => setActiveTab(tab.id)}
-								>
-									{tab.label}
-								</button>
-							))}
-						</div>
+						<Tabs
+							label={t('about.title')}
+							tabs={tabs}
+							active={activeTab}
+							onChange={setActiveTab}
+							className='ui-tabs'
+						/>
 
 						<div className='about-panel' role='tabpanel'>
 							{activeTab === 'experience' && (

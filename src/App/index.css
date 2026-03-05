@@ -15,6 +15,7 @@
 @import '../styles/components/Navbar/navbar.css';
 @import '../styles/components/Navbar/dropdown.css';
 @import '../styles/components/Navbar/navbar-items.css';
+@import '../styles/components/tabs.css';
 
 /* footer */
 @import '../styles/components/footer.css';
