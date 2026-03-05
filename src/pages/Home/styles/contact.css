@@ -33,7 +33,3 @@
 	border: 1px dashed rgb(var(--c-border));
 	background: rgb(var(--c-popover) / 0.6);
 }
-
-.contact-form {
-	/* nothing required, but you can keep it clean */
-}

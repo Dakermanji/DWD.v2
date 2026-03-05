@@ -3,6 +3,9 @@
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/shared/SectionTitle';
 import SectionButton from '../../../components/shared/SectionButton';
+import FormField from '../../../components/ui/FormField';
+import Input from '../../../components/ui/Input';
+import Textarea from '../../../components/ui/Textarea';
 
 export default function ContactSection({ user, onLogin }) {
 	user = true;
@@ -50,29 +53,19 @@ export default function ContactSection({ user, onLogin }) {
 							aria-disabled={isGuest}
 							className='space-y-4'
 						>
-							<label className='block'>
-								<span className='mb-1 block text-sm font-medium text-[rgb(var(--c-text))]'>
-									{t('contact.subject')}
-								</span>
+							<FormField
+								id='contact-subject'
+								label={t('contact.subject')}
+							>
+								<Input name='subject' autoComplete='off' />
+							</FormField>
 
-								<input
-									name='subject'
-									autoComplete='off'
-									className='w-full rounded-md border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] px-3 py-2 text-[rgb(var(--c-text))] outline-none focus:border-transparent focus:ring-2 focus:ring-[rgb(var(--c-text))]/15 disabled:cursor-not-allowed disabled:opacity-60'
-								/>
-							</label>
-
-							<label className='block'>
-								<span className='mb-1 block text-sm font-medium text-[rgb(var(--c-text))]'>
-									{t('contact.message')}
-								</span>
-
-								<textarea
-									name='message'
-									rows={6}
-									className='w-full resize-y rounded-md border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] px-3 py-2 text-[rgb(var(--c-text))] outline-none focus:border-transparent focus:ring-2 focus:ring-[rgb(var(--c-text))]/15 disabled:cursor-not-allowed disabled:opacity-60'
-								/>
-							</label>
+							<FormField
+								id='contact-message'
+								label={t('contact.message')}
+							>
+								<Textarea name='message' rows={6} />
+							</FormField>
 							<SectionButton type='submit'>
 								{t('layout:common.send')}
 							</SectionButton>
