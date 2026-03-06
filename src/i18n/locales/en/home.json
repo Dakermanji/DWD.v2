@@ -156,5 +156,18 @@
 		"guest": "Please sign in / sign up to send a message.",
 		"subject": "Subject",
 		"message": "Message"
+	},
+	"auth": {
+		"title": "Authentication",
+		"signin": "Sign in",
+		"signup": "Sign up",
+		"continue_google": "Continue with Google",
+		"continue_github": "Continue with GitHub",
+		"or": "or",
+		"email": "Email",
+		"email_placeholder": "you@example.com",
+		"password": "Password",
+		"signin_submit": "Sign in",
+		"signup_submit": "Send confirmation link"
 	}
 }

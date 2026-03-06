@@ -35,6 +35,7 @@
 		"description": "Your screen is too small to display the content properly. Please try rotating your device, zooming out, or reducing text size."
 	},
 	"common": {
-		"send": "Send"
+		"send": "Send",
+		"close": "Close"
 	}
 }

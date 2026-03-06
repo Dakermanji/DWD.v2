@@ -1,0 +1,47 @@
+/*! src/styles/components/oauth.css */
+
+.ui-oauth-btn {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 40px;
+	padding: 0 12px;
+	border-radius: 4px;
+	border: 1px solid rgb(var(--c-oauth-border));
+	background: rgb(var(--c-oauth-bg));
+	color: rgb(var(--c-oauth-text));
+	font-size: 14px;
+	font-weight: 500;
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.ui-oauth-btn:hover {
+	background: rgb(var(--c-oauth-hover));
+}
+
+.ui-oauth-btn:focus-visible {
+	outline: 2px solid rgb(var(--c-oauth-text) / 0.25);
+	outline-offset: 2px;
+}
+
+.ui-oauth-btn:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.ui-oauth-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.ui-oauth-text {
+	line-height: 1;
+}

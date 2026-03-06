@@ -19,6 +19,12 @@
 
 		--h-navbar: 4rem; /* 64px if root = 16px */
 		--h-footer: 3.5rem; /* 56px if root = 16px */
+
+		/* OAuth button (Google-safe) */
+		--c-oauth-bg: 255 255 255;
+		--c-oauth-border: 116 119 117;
+		--c-oauth-text: 31 31 31;
+		--c-oauth-hover: 241 243 244;
 	}
 
 	.dark {
@@ -30,5 +36,11 @@
 		--c-hover: 24 24 27; /* zinc-900 */
 		--c-active: 24 24 27; /* zinc-900 */
 		--c-popover: 9 9 11; /* zinc-950 */
+
+		/* OAuth button (Google-safe) */
+		--c-oauth-bg: 19 19 20;
+		--c-oauth-border: 142 145 143;
+		--c-oauth-text: 227 227 227;
+		--c-oauth-hover: 30 30 30;
 	}
 }

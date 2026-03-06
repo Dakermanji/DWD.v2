@@ -156,5 +156,18 @@
 		"guest": "Veuillez vous connecter ou créer un compte pour envoyer un message.",
 		"subject": "Sujet",
 		"message": "Message"
+	},
+	"auth": {
+		"title": "Authentification",
+		"signin": "Se connecter",
+		"signup": "Créer un compte",
+		"continue_google": "Continuer avec Google",
+		"continue_github": "Continuer avec GitHub",
+		"or": "ou",
+		"email": "Adresse e-mail",
+		"email_placeholder": "vous@exemple.com",
+		"password": "Mot de passe",
+		"signin_submit": "Se connecter",
+		"signup_submit": "Envoyer le lien de confirmation"
 	}
 }

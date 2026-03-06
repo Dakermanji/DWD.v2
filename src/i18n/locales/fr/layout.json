@@ -35,6 +35,7 @@
 		"description": "Votre écran est trop petit pour afficher le contenu correctement. Veuillez essayer de faire pivoter votre appareil, de réduire le zoom ou de réduire la taille du texte."
 	},
 	"common": {
-		"send": "Envoyer"
+		"send": "Envoyer",
+		"close": "Fermer"
 	}
 }

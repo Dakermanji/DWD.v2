@@ -156,5 +156,18 @@
 		"guest": "يرجى تسجيل الدخول أو إنشاء حساب لإرسال رسالة.",
 		"subject": "الموضوع",
 		"message": "الرسالة"
+	},
+	"auth": {
+		"title": "تسجيل الدخول",
+		"signin": "تسجيل الدخول",
+		"signup": "إنشاء حساب",
+		"continue_google": "المتابعة باستخدام Google",
+		"continue_github": "المتابعة باستخدام GitHub",
+		"or": "أو",
+		"email": "البريد الإلكتروني",
+		"email_placeholder": "you@example.com",
+		"password": "كلمة المرور",
+		"signin_submit": "تسجيل الدخول",
+		"signup_submit": "إرسال رابط التأكيد"
 	}
 }

@@ -1,14 +1,20 @@
 //! src/components/Auth/AuthModal.jsx
 
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Tabs from '../ui/Tabs';
 import CloseButton from '../ui/CloseButton';
+import FormField from '../ui/FormField';
+import Input from '../ui/Input';
+import OAuthButton from '../ui/OAuthButton';
 
-export default function AuthModal({ open, onClose }) {
-	const [tab, setTab] = useState('signin');
+export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
+	const { t } = useTranslation('home');
+	const [tab, setTab] = useState(initialTab);
 
 	const handleClose = () => {
-		setTab('signin');
+		setTab(initialTab);
 		onClose?.();
 	};
 
@@ -34,40 +40,119 @@ export default function AuthModal({ open, onClose }) {
 		};
 	}, [open]);
 
+	useEffect(() => {
+		if (open) setTab(initialTab);
+	}, [open, initialTab]);
+
 	if (!open) return null;
+
+	const title = tab === 'signin' ? t('auth.signin') : t('auth.signup');
 
 	return (
 		<div className='fixed inset-0 z-50 flex items-center justify-center p-4'>
 			<button
 				type='button'
 				className='absolute inset-0 bg-black/50'
-				aria-label='Close'
+				aria-label={t('layout:common.close')}
 				onClick={handleClose}
 			/>
 
-			<div className='relative flex flex-col w-full max-w-md max-h-[80vh] overflow-hidden rounded-2xl border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] shadow-lg'>
+			<div className='relative flex w-full max-w-md max-h-[80vh] flex-col overflow-hidden rounded-2xl border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] shadow-lg'>
 				<div className='flex items-center justify-between border-b border-[rgb(var(--c-border))] px-4 py-3'>
 					<h2 className='text-base font-semibold text-[rgb(var(--c-text))]'>
-						{tab === 'signin' ? 'Sign in' : 'Sign up'}
+						{title}
 					</h2>
 
-					<CloseButton onClick={handleClose} />
+					<CloseButton
+						onClick={handleClose}
+						label={t('layout:common.close')}
+					/>
 				</div>
 
 				<div className='min-h-0 flex-1 overflow-y-auto p-4'>
 					<Tabs
-						label='Authentication'
+						label={t('auth.title')}
 						tabs={[
-							{ id: 'signin', label: 'Sign in' },
-							{ id: 'signup', label: 'Sign up' },
+							{ id: 'signin', label: t('auth.signin') },
+							{ id: 'signup', label: t('auth.signup') },
 						]}
 						active={tab}
 						onChange={setTab}
 					/>
 
-					{/* Placeholder content for now */}
-					<div className='mt-4 rounded-md border border-[rgb(var(--c-border))] bg-[rgb(var(--c-surface))] p-4 text-sm text-[rgb(var(--c-muted))]'>
-						Auth form goes here later…
+					<div className='mt-4 space-y-4'>
+						{/* Social buttons (placeholders for now) */}
+						<div className='space-y-2'>
+							<OAuthButton provider='google' onClick={() => {}}>
+								{t('auth.continue_google')}
+							</OAuthButton>
+
+							<OAuthButton provider='github' onClick={() => {}}>
+								{t('auth.continue_github')}
+							</OAuthButton>
+						</div>
+						<div className='text-center text-sm text-[rgb(var(--c-muted))]'>
+							{t('auth.or')}
+						</div>
+						{tab === 'signin' ? (
+							<form
+								className='space-y-4'
+								onSubmit={(e) => e.preventDefault()}
+							>
+								<FormField
+									id='auth-email'
+									label={t('auth.email')}
+								>
+									<Input
+										name='email'
+										type='email'
+										autoComplete='email'
+										placeholder={t(
+											'auth.email_placeholder',
+										)}
+									/>
+								</FormField>
+
+								<FormField
+									id='auth-password'
+									label={t('auth.password')}
+								>
+									<Input
+										name='password'
+										type='password'
+										autoComplete='current-password'
+										placeholder='••••••••'
+									/>
+								</FormField>
+
+								<button type='submit' className='w-full ui-btn'>
+									{t('auth.signin_submit')}
+								</button>
+							</form>
+						) : (
+							<form
+								className='space-y-4'
+								onSubmit={(e) => e.preventDefault()}
+							>
+								<FormField
+									id='auth-email'
+									label={t('auth.email')}
+								>
+									<Input
+										name='email'
+										type='email'
+										autoComplete='email'
+										placeholder={t(
+											'auth.email_placeholder',
+										)}
+									/>
+								</FormField>
+
+								<button type='submit' className='w-full ui-btn'>
+									{t('auth.signup_submit')}
+								</button>
+							</form>
+						)}
 					</div>
 				</div>
 			</div>
