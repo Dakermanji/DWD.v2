@@ -9,7 +9,7 @@
 
 		--c-surface: 228 230 235; /* softer, less white */
 		--c-popover: 235 237 242; /* slightly lighter than surface */
-
+		--c-nav-footer: 200 202 207;
 		--c-border: 210 212 218; /* subtle but visible */
 
 		--c-hover: 218 220 226;
@@ -32,6 +32,7 @@
 		--c-muted: 161 161 170; /* zinc-400 */
 		--c-border: 39 39 42; /* zinc-800 */
 		--c-surface: 9 9 11; /* zinc-950 */
+		--c-nav-footer: 15 15 17;
 
 		--c-hover: 24 24 27; /* zinc-900 */
 		--c-active: 24 24 27; /* zinc-900 */

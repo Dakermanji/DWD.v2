@@ -2,8 +2,8 @@
 
 @layer components {
 	.ui-navbar {
-		@apply fixed top-0 left-0 w-full z-50;
-		@apply bg-[rgb(var(--c-surface))];
+		@apply fixed top-0 left-0 w-full z-30;
+		@apply bg-[rgb(var(--c-nav-footer))];
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
 		height: var(--h-navbar);
 	}
@@ -22,7 +22,7 @@
 	}
 
 	.ui-navbar-backdrop {
-		@apply fixed inset-0 z-40;
+		@apply fixed inset-0 z-30;
 		background: rgba(0, 0, 0, 0.18);
 	}
 }

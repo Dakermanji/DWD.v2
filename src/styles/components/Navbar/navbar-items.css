@@ -16,8 +16,8 @@
 	}
 
 	.ui-navcontent--col {
-		@apply flex-col gap-4;
-		@apply bg-[rgb(var(--c-surface))];
+		@apply flex-col gap-4 rounded-xl;
+		@apply bg-[rgb(var(--c-nav-footer))];
 		padding: 1rem;
 		@apply items-stretch;
 		@apply z-50 relative;

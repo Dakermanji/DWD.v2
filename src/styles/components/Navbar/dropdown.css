@@ -12,7 +12,7 @@
 
 	.ui-ddmenu {
 		@apply absolute z-50 min-w-44 overflow-hidden rounded-xl border shadow-sm;
-		@apply border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] text-[rgb(var(--c-text))];
+		@apply border-[rgb(var(--c-border))] bg-[rgb(var(--c-nav-footer))] text-[rgb(var(--c-text))];
 		top: calc(100% + 10px);
 	}
 

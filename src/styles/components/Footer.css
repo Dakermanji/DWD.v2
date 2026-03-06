@@ -2,8 +2,8 @@
 
 @layer components {
 	.ui-footer {
-		@apply fixed bottom-0 left-0 w-full z-50;
-		@apply bg-[rgb(var(--c-surface))];
+		@apply fixed bottom-0 left-0 w-full z-20;
+		@apply bg-[rgb(var(--c-nav-footer))];
 		min-height: var(--h-footer);
 		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.035);
 	}
