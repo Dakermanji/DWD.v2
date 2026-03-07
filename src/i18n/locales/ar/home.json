@@ -164,8 +164,8 @@
 		"continue_google": "المتابعة باستخدام Google",
 		"continue_github": "المتابعة باستخدام GitHub",
 		"or": "أو",
+		"identifier": "البريد الإلكتروني أو اسم المستخدم",
 		"email": "البريد الإلكتروني",
-		"email_placeholder": "you@example.com",
 		"password": "كلمة المرور",
 		"signin_submit": "تسجيل الدخول",
 		"signup_submit": "إرسال رابط التأكيد"

@@ -60,7 +60,7 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 
 			<div className='relative flex w-full max-w-md max-h-[80vh] flex-col overflow-hidden rounded-2xl border border-[rgb(var(--c-border))] bg-[rgb(var(--c-popover))] shadow-lg'>
 				<div className='flex items-center justify-between border-b border-[rgb(var(--c-border))] px-4 py-3'>
-					<h2 className='text-base font-semibold text-[rgb(var(--c-text))]'>
+					<h2 className='text-base font-semibold text-brand'>
 						{title}
 					</h2>
 
@@ -82,7 +82,6 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 					/>
 
 					<div className='mt-4 space-y-4'>
-						{/* Social buttons (placeholders for now) */}
 						<div className='space-y-2'>
 							<OAuthButton provider='google' onClick={() => {}}>
 								{t('auth.continue_google')}
@@ -101,16 +100,13 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 								onSubmit={(e) => e.preventDefault()}
 							>
 								<FormField
-									id='auth-email'
-									label={t('auth.email')}
+									id='auth-identifier'
+									label={t('auth.identifier')}
 								>
 									<Input
-										name='email'
-										type='email'
-										autoComplete='email'
-										placeholder={t(
-											'auth.email_placeholder',
-										)}
+										name='identifier'
+										type='text'
+										autoComplete='username'
 									/>
 								</FormField>
 
@@ -142,9 +138,6 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 										name='email'
 										type='email'
 										autoComplete='email'
-										placeholder={t(
-											'auth.email_placeholder',
-										)}
 									/>
 								</FormField>
 								<ActionButton type='submit' className='w-full'>

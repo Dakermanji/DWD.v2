@@ -164,8 +164,8 @@
 		"continue_google": "Continue with Google",
 		"continue_github": "Continue with GitHub",
 		"or": "or",
+		"identifier": "Email or username",
 		"email": "Email",
-		"email_placeholder": "you@example.com",
 		"password": "Password",
 		"signin_submit": "Sign in",
 		"signup_submit": "Send confirmation link"
