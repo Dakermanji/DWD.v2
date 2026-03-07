@@ -82,12 +82,12 @@
 	}
 }
 
-#home-page .section-btn-wrapper {
+.action-btn-wrapper {
 	text-align: center;
 	margin-top: 2.5rem;
 }
 
-#home-page .section-btn {
+.action-btn {
 	padding: 0.75rem 1.75rem;
 	border-radius: 999px;
 	border: none;
@@ -103,7 +103,7 @@
 		box-shadow 0.2s ease;
 }
 
-#home-page .section-btn:hover {
+.action-btn:hover {
 	background: var(--color-brand-hover);
 	transform: translateY(-2px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);

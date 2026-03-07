@@ -1,6 +1,6 @@
-//! src/components/shared/SectionButton.jsx
+//! src/components/shared/ActionButton.jsx
 
-export default function SectionButton({
+export default function ActionButton({
 	children,
 	type = 'button',
 	onClick,
@@ -8,15 +8,17 @@ export default function SectionButton({
 	disabled = false,
 	className = '',
 	wrapperClassName = '',
+	...props
 }) {
 	return (
-		<div className={`section-btn-wrapper ${wrapperClassName}`.trim()}>
+		<div className={`action-btn-wrapper ${wrapperClassName}`.trim()}>
 			<button
 				type={type}
 				onClick={onClick}
 				aria-label={ariaLabel}
 				disabled={disabled}
-				className={`section-btn ${className}`.trim()}
+				className={`action-btn ${className}`.trim()}
+				{...props}
 			>
 				{children}
 			</button>

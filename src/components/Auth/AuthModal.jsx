@@ -8,6 +8,7 @@ import CloseButton from '../ui/CloseButton';
 import FormField from '../ui/FormField';
 import Input from '../ui/Input';
 import OAuthButton from '../ui/OAuthButton';
+import ActionButton from '../shared/ActionButton';
 
 export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 	const { t } = useTranslation('home');
@@ -121,13 +122,12 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 										name='password'
 										type='password'
 										autoComplete='current-password'
-										placeholder='••••••••'
 									/>
 								</FormField>
 
-								<button type='submit' className='w-full ui-btn'>
+								<ActionButton type='submit' className='w-full'>
 									{t('auth.signin_submit')}
-								</button>
+								</ActionButton>
 							</form>
 						) : (
 							<form
@@ -147,10 +147,9 @@ export default function AuthModal({ open, onClose, initialTab = 'signin' }) {
 										)}
 									/>
 								</FormField>
-
-								<button type='submit' className='w-full ui-btn'>
+								<ActionButton type='submit' className='w-full'>
 									{t('auth.signup_submit')}
-								</button>
+								</ActionButton>
 							</form>
 						)}
 					</div>

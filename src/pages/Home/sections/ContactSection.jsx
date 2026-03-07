@@ -2,13 +2,13 @@
 
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../../components/shared/SectionTitle';
-import SectionButton from '../../../components/shared/SectionButton';
+import ActionButton from '../../../components/shared/ActionButton';
 import FormField from '../../../components/ui/FormField';
 import Input from '../../../components/ui/Input';
 import Textarea from '../../../components/ui/Textarea';
 
 export default function ContactSection({ user, onLogin }) {
-	user = true;
+	// user = true;
 	const isGuest = !user;
 	const { t } = useTranslation('home');
 
@@ -29,18 +29,9 @@ export default function ContactSection({ user, onLogin }) {
 							<p className='mb-3 text-sm text-[rgb(var(--c-muted))]'>
 								{t('contact.guest')}
 							</p>
-							<SectionButton onClick={onLogin}>
+							<ActionButton onClick={onLogin}>
 								{t('layout:auth.login_signup')}
-							</SectionButton>
-							<div className='section-btn-wrapper'>
-								<button
-									type='button'
-									onClick={onLogin}
-									className='section-btn'
-								>
-									{t('layout:auth.login_signup')}
-								</button>
-							</div>
+							</ActionButton>
 						</div>
 					)}
 
@@ -66,9 +57,9 @@ export default function ContactSection({ user, onLogin }) {
 							>
 								<Textarea name='message' rows={6} />
 							</FormField>
-							<SectionButton type='submit'>
+							<ActionButton type='submit'>
 								{t('layout:common.send')}
-							</SectionButton>
+							</ActionButton>
 						</fieldset>
 					</form>
 				</div>

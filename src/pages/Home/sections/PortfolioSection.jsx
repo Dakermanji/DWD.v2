@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import SectionTitle from '../../../components/shared/SectionTitle';
-import SectionButton from '../../../components/shared/SectionButton';
+import ActionButton from '../../../components/shared/ActionButton';
 import PortfolioCard from '../components/PortfolioCard.jsx';
 import useCardsPerRow from '../hooks/useCardsPerRow.js';
 
@@ -72,12 +72,12 @@ export default function PortfolioSection() {
 				</div>
 
 				{canSeeMore && (
-					<SectionButton
+					<ActionButton
 						onClick={() => setVisibleCount((c) => c + cardsPerRow)}
 						ariaLabel={t('portfolio.see_more_btn')}
 					>
 						{t('portfolio.see_more_btn')}
-					</SectionButton>
+					</ActionButton>
 				)}
 			</div>
 		</section>
