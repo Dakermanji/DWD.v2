@@ -10,6 +10,7 @@ const env = {
 	PROTOCOL: process.env.PROTOCOL ?? 'http',
 	DOMAIN_NAME: process.env.DOMAIN_NAME ?? 'localhost',
 	LOG_LEVEL: process.env.LOG_LEVEL ?? 'info',
+	SESSION_SECRET: process.env.SESSION_SECRET,
 };
 
 export default env;

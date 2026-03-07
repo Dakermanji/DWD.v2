@@ -6,6 +6,8 @@ import applyErrorHandlers from './errorHandlers.js';
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 applyMiddlewares(app);
 
 app.get('/api/health', (req, res) => {
