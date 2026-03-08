@@ -34,5 +34,5 @@
 	"overrides": {
 		"vite": "^8.0.0-beta.13"
 	},
-	"packageManager": "pnpm@10.30.3"
+	"packageManager": "pnpm@10.31.0"
 }

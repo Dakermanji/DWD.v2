@@ -10,8 +10,9 @@
 	},
 	"author": "Behnam Dakermanji",
 	"license": "ISC",
-	"packageManager": "pnpm@10.30.3",
+	"packageManager": "pnpm@10.31.0",
 	"dependencies": {
+		"connect-pg-simple": "^10.0.0",
 		"dotenv": "^17.3.1",
 		"express": "^5.2.1",
 		"express-session": "^1.19.0",

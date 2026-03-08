@@ -1,7 +1,9 @@
 //! server/middlewares/session.js
 
 import session from 'express-session';
+
 import env from '../config/dotenv.js';
+import sessionStore from '../config/sessionStore.js';
 
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 
@@ -10,6 +12,7 @@ const sessionMiddleware = (app) => {
 		session({
 			name: 'dwd.sid',
 			secret: env.SESSION_SECRET,
+			store: sessionStore,
 			resave: false,
 			saveUninitialized: false,
 			rolling: true,
