@@ -1,6 +1,7 @@
 //! server/config/processHandlers.js
 
 import logger from './logger.js';
+import { closeDatabasePool } from './database.js';
 
 export default function initProcessHandlers(server) {
 	// Unhandled promise rejections
@@ -25,16 +26,26 @@ export default function initProcessHandlers(server) {
 		}
 	});
 
-	const shutdown = (signal) => {
+	const shutdown = async (signal) => {
 		logger.warn(`⚙️ Received ${signal}. Shutting down gracefully...`);
 
+		setTimeout(() => {
+			logger.error('⚙️ Forced shutdown after timeout ⌛.');
+			process.exit(1);
+		}, 5000);
+
 		if (!server) {
+			await closeDatabasePool();
 			process.exit(0);
 			return;
 		}
 
-		server.close(() => {
-			logger.success(`⚙️ Server closed. Bye!`);
+		server.close(async () => {
+			logger.success('🌐 HTTP server closed.');
+
+			await closeDatabasePool();
+
+			logger.success('🚀 Server closed. Bye!');
 			process.exit(0);
 		});
 	};
