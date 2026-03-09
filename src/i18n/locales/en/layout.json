@@ -37,6 +37,6 @@
 	"common": {
 		"send": "Send",
 		"close": "Close",
-		"loading": "Loading..."
+		"loading": "Please wait..."
 	}
 }

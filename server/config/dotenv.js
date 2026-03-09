@@ -17,6 +17,9 @@ const env = {
 	DB_NAME: process.env.DB_NAME,
 	DB_USER: process.env.DB_USER,
 	DB_PASSWORD: process.env.DB_PASSWORD,
+	EMAIL_SERVICE: process.env.EMAIL_SERVICE,
+	EMAIL_USER: process.env.EMAIL_USER,
+	EMAIL_PASS: process.env.EMAIL_PASS,
 };
 
 export default env;
