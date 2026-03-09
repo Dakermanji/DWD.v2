@@ -3,25 +3,37 @@
 import { cloneElement } from 'react';
 
 export default function FormField({ id, label, hint, error, children }) {
-	const field = cloneElement(children, { id });
+	const hintId = hint ? `${id}-hint` : undefined;
+	const errorId = error ? `${id}-error` : undefined;
+
+	const describedBy =
+		[hint && !error ? hintId : '', error ? errorId : '']
+			.filter(Boolean)
+			.join(' ') || undefined;
+
+	const field = cloneElement(children, {
+		id,
+		'aria-describedby': describedBy,
+		'aria-invalid': error ? 'true' : children.props['aria-invalid'],
+	});
 
 	return (
-		<label htmlFor={id} className='block'>
-			<span className='mb-1 block text-sm font-medium text-[rgb(var(--c-text))]'>
-				{label}
-			</span>
+		<div className='form-field'>
+			<label htmlFor={id}>{label}</label>
 
 			{field}
 
 			{hint && !error && (
-				<span className='mt-1 block text-xs text-[rgb(var(--c-muted))]'>
+				<p id={hintId} className='form-hint'>
 					{hint}
-				</span>
+				</p>
 			)}
 
 			{error && (
-				<span className='mt-1 block text-xs text-red-600'>{error}</span>
+				<p id={errorId} className='form-error' role='alert'>
+					{error}
+				</p>
 			)}
-		</label>
+		</div>
 	);
 }

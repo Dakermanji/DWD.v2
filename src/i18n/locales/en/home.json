@@ -168,6 +168,11 @@
 		"email": "Email",
 		"password": "Password",
 		"signin_submit": "Sign in",
-		"signup_submit": "Send confirmation link"
+		"signup_submit": "Send confirmation link",
+		"validation": {
+			"email_required": "Email is required.",
+			"email_invalid": "Enter a valid email address.",
+			"email_too_long": "Email is too long."
+		}
 	}
 }
