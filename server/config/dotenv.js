@@ -9,6 +9,7 @@ const env = {
 	PORT: process.env.PORT ?? 3000,
 	PROTOCOL: process.env.PROTOCOL ?? 'http',
 	DOMAIN_NAME: process.env.DOMAIN_NAME ?? 'localhost',
+	CLIENT_URL: process.env.CLIENT_URL ?? 'http://localhost:5173',
 	LOG_LEVEL: process.env.LOG_LEVEL ?? 'info',
 	SESSION_SECRET: process.env.SESSION_SECRET,
 	DB_HOST: process.env.DB_HOST ?? 'localhost',

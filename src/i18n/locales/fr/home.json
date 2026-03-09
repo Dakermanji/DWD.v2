@@ -169,6 +169,8 @@
 		"password": "Mot de passe",
 		"signin_submit": "Se connecter",
 		"signup_submit": "Envoyer le lien de confirmation",
+		"signup_email_sent": "Un lien de confirmation a été envoyé à votre adresse e-mail.",
+		"server_error": "Une erreur est survenue. Veuillez réessayer.",
 		"validation": {
 			"email_required": "L’adresse e-mail est requise.",
 			"email_invalid": "Veuillez saisir une adresse e-mail valide.",

@@ -36,6 +36,7 @@
 	},
 	"common": {
 		"send": "Send",
-		"close": "Close"
+		"close": "Close",
+		"loading": "Loading..."
 	}
 }

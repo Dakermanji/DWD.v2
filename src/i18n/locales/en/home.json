@@ -169,6 +169,8 @@
 		"password": "Password",
 		"signin_submit": "Sign in",
 		"signup_submit": "Send confirmation link",
+		"signup_email_sent": "A confirmation link has been sent to your email.",
+		"server_error": "Something went wrong. Please try again.",
 		"validation": {
 			"email_required": "Email is required.",
 			"email_invalid": "Enter a valid email address.",

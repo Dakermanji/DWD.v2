@@ -18,6 +18,9 @@ export default function SignUpForm() {
 	const [email, setEmail] = useState('');
 	const [emailError, setEmailError] = useState('');
 	const [isTouched, setIsTouched] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [serverError, setServerError] = useState('');
+	const [serverSuccess, setServerSuccess] = useState('');
 
 	const validateEmailField = (value) => {
 		const errorKey = validateSignupEmail(value);
@@ -39,20 +42,48 @@ export default function SignUpForm() {
 		validateEmailField(email);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		setIsTouched(true);
+		setServerError('');
+		setServerSuccess('');
 
 		const isValid = validateEmailField(email);
 		if (!isValid) return;
 
 		const normalizedEmail = normalizeEmail(email);
 
-		console.log('Signup email ready to submit:', normalizedEmail);
+		try {
+			setIsSubmitting(true);
 
-		// later:
-		// submitSignupEmail({ email: normalizedEmail });
+			const response = await fetch('/auth/signup', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				credentials: 'include',
+				body: JSON.stringify({
+					email: normalizedEmail,
+				}),
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				setServerError(data.message || 'auth.server_error');
+				return;
+			}
+
+			setServerSuccess(data.message || 'auth.signup_email_sent');
+			setEmail('');
+			setIsTouched(false);
+			setEmailError('');
+		} catch {
+			setServerError('auth.server_error');
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
@@ -75,7 +106,16 @@ export default function SignUpForm() {
 				/>
 			</FormField>
 
-			<ActionButton type='submit'>{t('auth.signup_submit')}</ActionButton>
+			{serverError && <p className='form-error'>{t(serverError)}</p>}
+			{serverSuccess && (
+				<p className='form-success'>{t(serverSuccess)}</p>
+			)}
+
+			<ActionButton type='submit' disabled={isSubmitting}>
+				{isSubmitting
+					? t('layout:common.loading')
+					: t('auth.signup_submit')}
+			</ActionButton>
 		</form>
 	);
 }
