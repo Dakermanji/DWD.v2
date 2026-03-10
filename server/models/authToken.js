@@ -1,6 +1,6 @@
 //! server/models/authToken.js
 
-import db from '../config/db.js';
+import db from '../config/database.js';
 
 export const createAuthToken = async ({
 	userId,
@@ -18,4 +18,28 @@ export const createAuthToken = async ({
     `;
 
 	await db.query(query, [userId, tokenHash, type, expiresAt]);
+};
+
+export const findAuthTokenByHashAndType = async (tokenHash, type) => {
+	const query = `
+        SELECT user_id, expires_at
+        FROM auth_tokens
+        WHERE token_hash = $1
+        AND type = $2
+        LIMIT 1
+    `;
+
+	const result = await db.query(query, [tokenHash, type]);
+
+	return result.rows[0];
+};
+
+export const deleteAuthToken = async (userId, type) => {
+	const query = `
+        DELETE FROM auth_tokens
+        WHERE user_id = $1
+        AND type = $2
+    `;
+
+	await db.query(query, [userId, type]);
 };

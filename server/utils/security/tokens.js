@@ -1,4 +1,4 @@
-//! server/utils/security/generateToken.js
+//! server/utils/security/tokens.js
 
 import crypto from 'crypto';
 
@@ -17,4 +17,8 @@ export const generateToken = ({ bytes = 32, ttlMinutes = 30 } = {}) => {
 		hashedToken,
 		expiresAt,
 	};
+};
+
+export const hashToken = (token) => {
+	return crypto.createHash('sha256').update(token).digest('hex');
 };

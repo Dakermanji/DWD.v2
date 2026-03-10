@@ -24,3 +24,13 @@ export const createPendingUser = async (email) => {
 
 	return result.rows[0];
 };
+
+export const verifyUser = async (userId) => {
+	const query = `
+        UPDATE users
+        SET is_verified = TRUE
+        WHERE id = $1
+        `;
+
+	await db.query(query, [userId]);
+};

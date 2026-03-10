@@ -2,7 +2,7 @@
 
 import { findUserByEmail, createPendingUser } from '../../models/user.js';
 import { createAuthToken } from '../../models/authToken.js';
-import { generateToken } from '../../utils/security/generateToken.js';
+import { generateToken } from '../../utils/security/tokens.js';
 import sendSignupEmail from '../../utils/mail/sendSignupEmail.js';
 import { delay } from '../../utils/time/timers.js';
 
