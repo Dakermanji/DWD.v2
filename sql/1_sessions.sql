@@ -1,4 +1,4 @@
--- sql/2_sessions.sql
+-- sql/1_sessions.sql
 CREATE TABLE
     "session" (
         "sid" VARCHAR NOT NULL,

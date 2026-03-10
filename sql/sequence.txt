@@ -1,3 +1,5 @@
 #! sql/sequence.txt
 
-1_user.sql
+1_sessions
+2_users
+3_auth_tokens

@@ -1,7 +1,7 @@
--- sql/1_users.sql
+-- sql/2_users.sql
 CREATE TABLE
     users (
-        id UUID PRIMARY KEY,
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid (),
         email TEXT NOT NULL,
         username TEXT NULL,
         username_normalized TEXT NULL,
@@ -9,11 +9,6 @@ CREATE TABLE
         google_id TEXT NULL,
         github_id TEXT NULL,
         is_verified BOOLEAN NOT NULL DEFAULT FALSE,
-        signup_token_hash TEXT NULL,
-        signup_token_expires_at TIMESTAMPTZ NULL,
-        reset_token_hash TEXT NULL,
-        reset_token_expires_at TIMESTAMPTZ NULL,
-        token_request_count INTEGER NOT NULL DEFAULT 0,
         last_login_at TIMESTAMPTZ NULL,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW (),
         updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW ()
@@ -34,7 +29,3 @@ WHERE
     github_id IS NOT NULL;
 
 CREATE INDEX idx_users_last_login ON users (last_login_at);
-
-CREATE INDEX idx_users_signup_token_expires_at ON users (signup_token_expires_at);
-
-CREATE INDEX idx_users_reset_token_expires_at ON users (reset_token_expires_at);
