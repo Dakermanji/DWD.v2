@@ -15,3 +15,16 @@ export const findUserByEmail = async (email) => {
 
 	return result.rows[0] || null;
 };
+
+export const createPendingUser = async (email) => {
+	const result = await db.query(
+		`
+        INSERT INTO users (id)
+        VALUES ($1)
+        RETURNING id, email
+        `,
+		[email],
+	);
+
+	return result.rows[0];
+};

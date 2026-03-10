@@ -1,21 +1,41 @@
 //! server/controllers/auth/signup.js
 
-import { findUserByEmail } from '../../models/user.js';
+import { findUserByEmail, createPendingUser } from '../../models/user.js';
+import { createAuthToken } from '../../models/authToken.js';
+import { generateToken } from '../../utils/security/generateToken.js';
 import sendSignupEmail from '../../utils/mail/sendSignupEmail.js';
+import { delay } from '../../utils/time/timers.js';
+
+const getRandomDelayMs = (min = 1000, max = 5000) => {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const requestSignup = async (req, res) => {
 	const { email } = req.body;
 	const lang = 'en';
 
 	try {
-		const user = await findUserByEmail(email);
+		let user = await findUserByEmail(email);
 
-		// For now we just log this — later it affects logic
 		if (user) {
-			console.log('Signup requested for existing email');
+			await delay(getRandomDelayMs());
+			return res.json({
+				message: 'auth.signup_email_sent',
+			});
 		}
 
-		const rawToken = 'test_dev';
+		user = await createPendingUser(email);
+
+		const { rawToken, hashedToken, expiresAt } = generateToken({
+			ttlMinutes: 30,
+		});
+
+		await createAuthToken({
+			userId: user.id,
+			tokenHash: hashedToken,
+			type: 'signup',
+			expiresAt,
+		});
 
 		await sendSignupEmail({
 			to: email,
