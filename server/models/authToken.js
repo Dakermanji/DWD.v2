@@ -1,6 +1,6 @@
-//! server/models/auth_token.js
+//! server/models/authToken.js
 
-import db from '../config/database.js';
+import db from '../config/db.js';
 
 export const createAuthToken = async ({
 	userId,
@@ -8,19 +8,14 @@ export const createAuthToken = async ({
 	type,
 	expiresAt,
 }) => {
-	const result = await db.query(
-		`
-        INSERT INTO auth_tokens (
-            user_id,
-            token_hash,
-            type,
-            expires_at
-        )
+	const query = `
+        INSERT INTO auth_tokens (user_id, token_hash, type, expires_at)
         VALUES ($1, $2, $3, $4)
-        RETURNING id, user_id, type, expires_at
-        `,
-		[userId, tokenHash, type, expiresAt],
-	);
+        ON CONFLICT (user_id, type)
+        DO UPDATE SET
+            token_hash = EXCLUDED.token_hash,
+            expires_at = EXCLUDED.expires_at
+    `;
 
-	return result.rows[0];
+	await db.query(query, [userId, tokenHash, type, expiresAt]);
 };
