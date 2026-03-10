@@ -19,7 +19,7 @@ export const findUserByEmail = async (email) => {
 export const createPendingUser = async (email) => {
 	const result = await db.query(
 		`
-        INSERT INTO users (id)
+        INSERT INTO users (email)
         VALUES ($1)
         RETURNING id, email
         `,
